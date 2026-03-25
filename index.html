@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roxana Stylist | Peluquería y Estilismo</title>
+  <title>ROXANA BILBAO | Peluquería y Estilismo</title>
   <meta name="description" content="Peluquería y estilismo profesional. Color, cortes, nutrición capilar, peinados y reservas por WhatsApp." />
   <meta name="theme-color" content="#e8d7cb" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Roxana Stylist | Peluquería y Estilismo" />
+  <meta property="og:title" content="ROXANA BILBAO | Peluquería y Estilismo" />
   <meta property="og:description" content="Servicios de peluquería y estilismo con reservas por WhatsApp. Una web suave, femenina y profesional." />
   <meta property="og:image" content="https://iili.io/qiL6yMl.png" />
   <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Roxana Stylist | Peluquería y Estilismo" />
+  <meta name="twitter:title" content="ROXANA BILBAO | Peluquería y Estilismo" />
   <meta name="twitter:description" content="Servicios de peluquería y estilismo con reservas por WhatsApp." />
   <meta name="twitter:image" content="https://iili.io/qiL6yMl.png" />
 
@@ -63,12 +63,10 @@
     }
 
     body{
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family:"Segoe UI", Arial, sans-serif;
       color:var(--text);
       background-color:var(--bg);
-      background-image:
-        linear-gradient(rgba(250,244,239,.72), rgba(250,244,239,.72)),
-        url("https://iili.io/qip0l3v.jpg");
+      background-image:url("https://iili.io/qip0l3v.jpg");
       background-size:cover;
       background-position:center top;
       background-repeat:no-repeat;
@@ -78,9 +76,7 @@
     }
 
     body.dark{
-      background-image:
-        linear-gradient(rgba(28,22,20,.76), rgba(28,22,20,.76)),
-        url("https://iili.io/qip0l3v.jpg");
+      background-image:url("https://iili.io/qip0l3v.jpg");
     }
 
     img{
@@ -703,13 +699,13 @@
       position:fixed;
       right:18px;
       bottom:18px;
-      width:62px;
-      height:62px;
+      width:70px;
+      height:70px;
       border-radius:50%;
       display:grid;
       place-items:center;
       z-index:1050;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.95);
       box-shadow:0 14px 28px rgba(0,0,0,.18);
       border:1px solid rgba(0,0,0,.06);
       transition:transform .25s ease, opacity .25s ease, bottom .25s ease;
@@ -720,8 +716,8 @@
     }
 
     .whatsapp-float img{
-      width:33px;
-      height:33px;
+      width:40px;
+      height:40px;
       object-fit:contain;
     }
 
@@ -916,15 +912,15 @@
       }
 
       .whatsapp-float{
-        width:58px;
-        height:58px;
+        width:72px;
+        height:72px;
         right:14px;
-        bottom:14px;
+        bottom:26px;
       }
 
       .whatsapp-float img{
-        width:31px;
-        height:31px;
+        width:42px;
+        height:42px;
       }
     }
   </style>
@@ -935,10 +931,10 @@
     <div class="topbar-inner glass">
       <a href="#inicio" class="brand">
         <div class="brand-logo">
-          <img src="https://iili.io/qsHFUiX.png" alt="Logo Roxana Stylist">
+          <img src="https://iili.io/qsHFUiX.png" alt="Logo ROXANA BILBAO">
         </div>
         <div class="brand-copy">
-          <strong>Roxana Stylist</strong>
+          <strong>ROXANA BILBAO</strong>
           <span>Peluquería y estilismo</span>
         </div>
       </a>
@@ -1006,7 +1002,7 @@
     <section class="section" id="sobre">
       <div class="container about-grid">
         <div class="about-media reveal">
-          <img src="https://iili.io/qiL6yMl.png" alt="Roxana Stylist">
+          <img src="https://iili.io/qiL6yMl.png" alt="ROXANA BILBAO">
         </div>
 
         <div class="about-content glass reveal">
@@ -1296,7 +1292,7 @@
   <footer id="footer">
     <div class="container">
       <div class="footer-card glass">
-        <p>Roxana Stylist | Peluquería y estilismo con reservas por WhatsApp.</p>
+        <p>ROXANA BILBAO | Peluquería y estilismo con reservas por WhatsApp.</p>
         <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
       </div>
     </div>
@@ -1389,14 +1385,15 @@
 
     const footerObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if(window.innerWidth <= 560 && entry.isIntersecting){
           whatsappFloat.classList.add("hide-near-footer");
         } else {
           whatsappFloat.classList.remove("hide-near-footer");
         }
       });
     }, {
-      threshold: 0.12
+      threshold: 0.24,
+      rootMargin: "0px 0px -80px 0px"
     });
 
     footerObserver.observe(footer);
