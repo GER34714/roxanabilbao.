@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roxana Stylist | Peluqueria y Estilismo</title>
-  <meta name="description" content="Peluqueria y estilismo profesional. Color, cortes, nutricion capilar, peinados y reservas por WhatsApp." />
+  <title>Roxana Stylist | Peluquería y Estilismo</title>
+  <meta name="description" content="Peluquería y estilismo profesional. Color, cortes, nutrición capilar, peinados y reservas por WhatsApp." />
   <meta name="theme-color" content="#e8d7cb" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Roxana Stylist | Peluqueria y Estilismo" />
-  <meta property="og:description" content="Servicios de peluqueria y estilismo con reservas por WhatsApp. Una web suave, femenina y profesional." />
+  <meta property="og:title" content="Roxana Stylist | Peluquería y Estilismo" />
+  <meta property="og:description" content="Servicios de peluquería y estilismo con reservas por WhatsApp. Una web suave, femenina y profesional." />
   <meta property="og:image" content="https://iili.io/qiL6yMl.png" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Roxana Stylist | Peluqueria y Estilismo" />
-  <meta name="twitter:description" content="Servicios de peluqueria y estilismo con reservas por WhatsApp." />
+  <meta name="twitter:title" content="Roxana Stylist | Peluquería y Estilismo" />
+  <meta name="twitter:description" content="Servicios de peluquería y estilismo con reservas por WhatsApp." />
   <meta name="twitter:image" content="https://iili.io/qiL6yMl.png" />
 
   <style>
@@ -518,6 +518,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:22px;
+      margin-bottom:24px;
     }
 
     .work-card{
@@ -554,6 +555,27 @@
 
     .work-body p{
       color:var(--muted);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .gallery-card{
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:var(--card-strong);
+    }
+
+    .gallery-card img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center;
     }
 
     .booking-wrap{
@@ -721,7 +743,8 @@
         min-height:520px;
       }
 
-      .services-grid{
+      .services-grid,
+      .gallery-grid{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
@@ -772,6 +795,7 @@
 
       .services-grid,
       .work-grid,
+      .gallery-grid,
       .about-list{
         grid-template-columns:1fr;
       }
@@ -874,7 +898,8 @@
         border-radius:24px;
       }
 
-      .work-card{
+      .work-card,
+      .gallery-card{
         border-radius:24px;
       }
 
@@ -914,16 +939,17 @@
         </div>
         <div class="brand-copy">
           <strong>Roxana Stylist</strong>
-          <span>Peluqueria y estilismo</span>
+          <span>Peluquería y estilismo</span>
         </div>
       </a>
 
       <nav class="nav">
         <div class="nav-links" id="mobileMenu">
           <a href="#inicio">Inicio</a>
-          <a href="#sobre">Sobre mi</a>
+          <a href="#sobre">Sobre mí</a>
           <a href="#servicios">Servicios</a>
           <a href="#trabajos">Trabajos</a>
+          <a href="#galeria">Galería</a>
           <a href="#reservas">Reservas</a>
           <a href="#contacto">Contacto</a>
         </div>
@@ -952,7 +978,7 @@
           <span class="eyebrow">Estilo, color y cuidado capilar</span>
           <h1>Tu imagen, cuidada con detalle y profesionalismo</h1>
           <p>
-            Un espacio pensado para realzar tu estilo con servicios de peluqueria, coloracion, nutricion capilar y peinados, con una atencion cercana, delicada y enfocada en cada clienta.
+            Un espacio pensado para realzar tu estilo con servicios de peluquería, coloración, nutrición capilar y peinados, con una atención cercana, delicada y enfocada en cada clienta.
           </p>
 
           <div class="hero-actions">
@@ -961,17 +987,17 @@
           </div>
 
           <div class="hero-chips">
-            <span>Atencion personalizada</span>
+            <span>Atención personalizada</span>
             <span>Color y estilismo</span>
             <span>Turnos por WhatsApp</span>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en peluqueria">
+          <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en peluquería">
           <div class="hero-badge glass">
             <strong>Reservas simples y directas</strong>
-            <span>Elegis el servicio, escribis por WhatsApp y coordinas tu turno de forma rapida.</span>
+            <span>Elegís el servicio, escribís por WhatsApp y coordinás tu turno de forma rápida.</span>
           </div>
         </div>
       </div>
@@ -986,15 +1012,15 @@
         <div class="about-content glass reveal">
           <h2>Sobre Roxana</h2>
           <p>
-            Roxana trabaja cada servicio con una mirada profesional, cuidando no solo el resultado final sino tambien el proceso, la salud del cabello y la experiencia de cada clienta.
+            Roxana trabaja cada servicio con una mirada profesional, cuidando no solo el resultado final sino también el proceso, la salud del cabello y la experiencia de cada clienta.
           </p>
           <p>
-            La propuesta combina tecnica, estilo y cercania para lograr looks armoniosos, personalizados y alineados con lo que cada persona busca transmitir.
+            La propuesta combina técnica, estilo y cercanía para lograr looks armónicos, personalizados y alineados con lo que cada persona busca transmitir.
           </p>
 
           <ul class="about-list">
-            <li>Atencion dedicada en cada detalle</li>
-            <li>Asesoramiento segun tu estilo</li>
+            <li>Atención dedicada en cada detalle</li>
+            <li>Asesoramiento según tu estilo</li>
             <li>Servicios pensados para realzar tu imagen</li>
             <li>Resultados prolijos, femeninos y naturales</li>
           </ul>
@@ -1006,7 +1032,7 @@
       <div class="container">
         <h2 class="section-title reveal">Servicios pensados para tu estilo</h2>
         <p class="section-subtitle reveal">
-          Una propuesta completa para cuidar, renovar y potenciar tu imagen con una atencion profesional y personalizada.
+          Una propuesta completa para cuidar, renovar y potenciar tu imagen con una atención profesional y personalizada.
         </p>
 
         <div class="services-grid">
@@ -1014,7 +1040,7 @@
             <div class="service-top">
               <div>
                 <h3>Cortes y cambio de look</h3>
-                <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
+                <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
               </div>
               <div class="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1027,7 +1053,7 @@
           <article class="service-card glass reveal">
             <div class="service-top">
               <div>
-                <h3>Coloracion y mechas</h3>
+                <h3>Coloración y mechas</h3>
                 <p>Trabajos de color, iluminaciones, mechas y propuestas que respetan tu esencia y tu cabello.</p>
               </div>
               <div class="service-icon">
@@ -1041,8 +1067,8 @@
           <article class="service-card glass reveal">
             <div class="service-top">
               <div>
-                <h3>Nutricion capilar</h3>
-                <p>Tratamientos orientados al cuidado, la reparacion y la mejora de la textura y el brillo.</p>
+                <h3>Nutrición capilar</h3>
+                <p>Tratamientos orientados al cuidado, la reparación y la mejora de la textura y el brillo.</p>
               </div>
               <div class="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1057,7 +1083,7 @@
             <div class="service-top">
               <div>
                 <h3>Alisados</h3>
-                <p>Opciones para facilitar el peinado diario y lograr una terminacion prolija y cuidada.</p>
+                <p>Opciones para facilitar el peinado diario y lograr una terminación prolija y cuidada.</p>
               </div>
               <div class="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1102,20 +1128,20 @@
 
     <section class="section" id="trabajos">
       <div class="container">
-        <h2 class="section-title reveal">Trabajo real, cuidado y dedicacion</h2>
+        <h2 class="section-title reveal">Trabajo real, cuidado y dedicación</h2>
         <p class="section-subtitle reveal">
-          Imagenes pensadas para mostrar profesionalismo, proceso y atencion en cada servicio, sin tapar ni deformar las fotos.
+          Imágenes pensadas para mostrar profesionalismo, proceso y atención en cada servicio, sin tapar ni deformar las fotos.
         </p>
 
         <div class="work-grid">
           <article class="work-card reveal">
             <div class="work-media">
-              <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en un servicio de peluqueria">
+              <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en un servicio de peluquería">
             </div>
             <div class="work-body">
-              <h3>Atencion en cada detalle</h3>
+              <h3>Atención en cada detalle</h3>
               <p>
-                Un trabajo delicado y profesional, enfocado en que cada resultado mantenga armonia, estilo y una terminacion prolija.
+                Un trabajo delicado y profesional, enfocado en que cada resultado mantenga armonía, estilo y una terminación prolija.
               </p>
             </div>
           </article>
@@ -1127,9 +1153,56 @@
             <div class="work-body">
               <h3>Experiencia personalizada</h3>
               <p>
-                Cada servicio se adapta a la necesidad de la clienta, buscando una experiencia comoda y un resultado que acompañe su imagen.
+                Cada servicio se adapta a la necesidad de la clienta, buscando una experiencia cómoda y un resultado que acompañe su imagen.
               </p>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <h2 class="section-title reveal">Galería de resultados</h2>
+        <p class="section-subtitle reveal">
+          Una selección de trabajos para mostrar estilos, terminaciones y resultados reales, manteniendo las imágenes limpias y bien encuadradas.
+        </p>
+
+        <div class="gallery-grid">
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZlsFS.png" alt="Resultado de trabajo de peluquería 1">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZ0TlI.png" alt="Resultado de trabajo de peluquería 2">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZayOb.png" alt="Resultado de trabajo de peluquería 3">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZcdWQ.png" alt="Resultado de trabajo de peluquería 4">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZcFqB.png" alt="Resultado de trabajo de peluquería 5">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZ0cxf.png" alt="Resultado de trabajo de peluquería 6">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZ0RHX.png" alt="Resultado de trabajo de peluquería 7">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZ0Nxj.png" alt="Resultado de trabajo de peluquería 8">
+          </article>
+
+          <article class="gallery-card reveal">
+            <img src="https://iili.io/qiZcPYF.png" alt="Resultado de trabajo de peluquería 9">
           </article>
         </div>
       </div>
@@ -1138,33 +1211,33 @@
     <section class="section" id="reservas">
       <div class="container booking-wrap">
         <div class="booking-card glass reveal">
-          <h2 style="color:var(--text-strong); font-size:clamp(2rem,4vw,2.8rem); line-height:1.05; margin-bottom:14px;">Reserva tu turno por WhatsApp</h2>
+          <h2 style="color:var(--text-strong); font-size:clamp(2rem,4vw,2.8rem); line-height:1.05; margin-bottom:14px;">Reservá tu turno por WhatsApp</h2>
           <p style="color:var(--muted);">
-            Un sistema simple para que puedas consultar disponibilidad, elegir el servicio y coordinar dia y horario de forma directa.
+            Un sistema simple para que puedas consultar disponibilidad, elegir el servicio y coordinar día y horario de forma directa.
           </p>
 
           <div class="steps">
             <div class="step">
               <div class="step-number">1</div>
               <div>
-                <h4>Elegis el servicio</h4>
-                <p>Nos contas que queres hacerte o te asesoramos segun tu necesidad.</p>
+                <h4>Elegís el servicio</h4>
+                <p>Nos contás qué querés hacerte o te asesoramos según tu necesidad.</p>
               </div>
             </div>
 
             <div class="step">
               <div class="step-number">2</div>
               <div>
-                <h4>Escribis por WhatsApp</h4>
-                <p>Envias tu consulta y coordinas de forma rapida y directa.</p>
+                <h4>Escribís por WhatsApp</h4>
+                <p>Enviás tu consulta y coordinás de forma rápida y directa.</p>
               </div>
             </div>
 
             <div class="step">
               <div class="step-number">3</div>
               <div>
-                <h4>Confirmas tu turno</h4>
-                <p>Definimos dia, horario y detalles para que tu visita sea comoda y organizada.</p>
+                <h4>Confirmás tu turno</h4>
+                <p>Definimos día, horario y detalles para que tu visita sea cómoda y organizada.</p>
               </div>
             </div>
           </div>
@@ -1177,7 +1250,7 @@
         <div class="contact-card glass reveal" id="contacto">
           <h2 style="color:var(--text-strong); font-size:clamp(1.8rem,3.5vw,2.4rem); line-height:1.08; margin-bottom:12px;">Contacto</h2>
           <p style="color:var(--muted);">
-            Si queres reservar, consultar por un servicio o recibir mas informacion, podes escribir de forma directa.
+            Si querés reservar, consultar por un servicio o recibir más información, podés escribir de forma directa.
           </p>
 
           <div class="contact-list">
@@ -1192,17 +1265,17 @@
             </div>
 
             <div class="contact-item">
-              <strong>Ubicacion</strong>
-              <span>Agregar direccion exacta</span>
+              <strong>Ubicación</strong>
+              <span>9 de Julio 436, Caleta Olivia</span>
             </div>
 
             <div class="contact-item">
               <strong>Horarios</strong>
-              <span>Agregar dias y horarios de atencion</span>
+              <span>Agregar días y horarios de atención</span>
             </div>
           </div>
 
-          <a class="btn btn-secondary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20mas%20informacion%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
+          <a class="btn btn-secondary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20más%20información%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
         </div>
       </div>
     </section>
@@ -1210,9 +1283,9 @@
     <section class="section">
       <div class="container">
         <div class="cta-box glass reveal">
-          <h2>Renova tu estilo con una atencion profesional y cercana</h2>
+          <h2>Renová tu estilo con una atención profesional y cercana</h2>
           <p>
-            Una propuesta pensada para que te sientas comoda, acompañada y segura en cada cambio, con resultados delicados y un contacto simple por WhatsApp.
+            Una propuesta pensada para que te sientas cómoda, acompañada y segura en cada cambio, con resultados delicados y un contacto simple por WhatsApp.
           </p>
           <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno</a>
         </div>
@@ -1223,7 +1296,7 @@
   <footer id="footer">
     <div class="container">
       <div class="footer-card glass">
-        <p>Roxana Stylist | Peluqueria y estilismo con reservas por WhatsApp.</p>
+        <p>Roxana Stylist | Peluquería y estilismo con reservas por WhatsApp.</p>
         <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
       </div>
     </div>
