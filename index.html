@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roxana Stylist | Peluqueria y Estilismo</title>
+  <meta name="description" content="Peluqueria y estilismo profesional. Color, cortes, nutricion capilar, peinados y reservas por WhatsApp." />
+  <meta name="theme-color" content="#e8d7cb" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Roxana Stylist | Peluqueria y Estilismo" />
+  <meta property="og:description" content="Servicios de peluqueria y estilismo con reservas por WhatsApp. Una web suave, femenina y profesional." />
+  <meta property="og:image" content="https://iili.io/qiL6yMl.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Roxana Stylist | Peluqueria y Estilismo" />
+  <meta name="twitter:description" content="Servicios de peluqueria y estilismo con reservas por WhatsApp." />
+  <meta name="twitter:image" content="https://iili.io/qiL6yMl.png" />
+
+  <style>
+    :root{
+      --bg:#f7f0ea;
+      --bg-soft:#fbf7f3;
+      --card:rgba(255,248,243,.78);
+      --card-strong:rgba(255,250,247,.90);
+      --text:#5d4942;
+      --text-strong:#3f2f2a;
+      --muted:#8c7168;
+      --border:rgba(133,103,91,.14);
+      --accent:#c9a996;
+      --accent-2:#b98d77;
+      --shadow:0 14px 40px rgba(83,58,50,.10);
+      --radius:26px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    body.dark{
+      --bg:#221b19;
+      --bg-soft:#2a211f;
+      --card:rgba(47,37,34,.80);
+      --card-strong:rgba(56,44,40,.90);
+      --text:#f1e5dd;
+      --text-strong:#fff5ef;
+      --muted:#d1b8ad;
+      --border:rgba(255,237,227,.10);
+      --accent:#d1a48b;
+      --accent-2:#e1b69e;
+      --shadow:0 14px 40px rgba(0,0,0,.28);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: "Segoe UI", Arial, sans-serif;
+      color:var(--text);
+      background-color:var(--bg);
+      background-image:
+        linear-gradient(rgba(250,244,239,.72), rgba(250,244,239,.72)),
+        url("https://iili.io/qip0l3v.jpg");
+      background-size:cover;
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      overflow-x:hidden;
+      line-height:1.55;
+    }
+
+    body.dark{
+      background-image:
+        linear-gradient(rgba(28,22,20,.76), rgba(28,22,20,.76)),
+        url("https://iili.io/qip0l3v.jpg");
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin-inline:auto;
+    }
+
+    .section{
+      padding:92px 0;
+      position:relative;
+      z-index:1;
+    }
+
+    .section-title{
+      max-width:700px;
+      margin:0 auto 18px;
+      text-align:center;
+      color:var(--text-strong);
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.08;
+      letter-spacing:-0.03em;
+    }
+
+    .section-subtitle{
+      max-width:760px;
+      margin:0 auto 46px;
+      text-align:center;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .glass{
+      background:var(--card);
+      border:1px solid var(--border);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:var(--shadow);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(36px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      padding:14px 0;
+      transition:transform .35s ease, background .35s ease, box-shadow .35s ease;
+    }
+
+    .topbar.scrolled .topbar-inner{
+      background:var(--card-strong);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .topbar.hide{
+      transform:translateY(-110%);
+    }
+
+    .topbar-inner{
+      width:min(calc(100% - 24px), var(--max));
+      margin-inline:auto;
+      border-radius:999px;
+      padding:12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      transition:all .35s ease;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#fff;
+      flex-shrink:0;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .brand-copy{
+      min-width:0;
+    }
+
+    .brand-copy strong{
+      display:block;
+      color:var(--text-strong);
+      font-size:1rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-copy span{
+      display:block;
+      font-size:.87rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .nav-links a{
+      padding:12px 14px;
+      border-radius:999px;
+      color:var(--text);
+      font-size:.95rem;
+      transition:background .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.35);
+      color:var(--text-strong);
+      transform:translateY(-1px);
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .theme-toggle,
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      background:var(--card-strong);
+      border:1px solid var(--border);
+      color:var(--text-strong);
+      box-shadow:var(--shadow);
+    }
+
+    .menu-toggle{
+      display:none;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 22px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      color:#fff9f6;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 14px 30px rgba(185,141,119,.28);
+    }
+
+    .btn-secondary{
+      background:var(--card-strong);
+      border-color:var(--border);
+      color:var(--text-strong);
+    }
+
+    .hero{
+      padding:58px 0 72px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      align-items:center;
+      gap:34px;
+    }
+
+    .hero-card{
+      border-radius:34px;
+      padding:38px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.46);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      color:var(--text-strong);
+      font-size:clamp(2.6rem, 5vw, 5rem);
+      line-height:.98;
+      letter-spacing:-0.05em;
+      margin-bottom:18px;
+      max-width:10ch;
+    }
+
+    .hero p{
+      max-width:600px;
+      color:var(--muted);
+      font-size:1.05rem;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .hero-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .hero-chips span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.42);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:.92rem;
+    }
+
+    .hero-visual{
+      min-height:620px;
+      border-radius:34px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.25);
+    }
+
+    .hero-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .hero-badge{
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      padding:16px 18px;
+      border-radius:22px;
+      max-width:320px;
+      color:var(--text-strong);
+    }
+
+    .hero-badge strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .hero-badge span{
+      display:block;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .about-media{
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      min-height:560px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .about-content{
+      border-radius:30px;
+      padding:34px;
+    }
+
+    .about-content h2{
+      color:var(--text-strong);
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.05;
+      margin-bottom:16px;
+    }
+
+    .about-content p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .about-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .about-list li{
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.38);
+      border:1px solid var(--border);
+      color:var(--text);
+      min-height:74px;
+      display:flex;
+      align-items:center;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .service-card{
+      border-radius:28px;
+      padding:26px;
+      min-height:240px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .service-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .service-icon{
+      width:52px;
+      height:52px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.42);
+      border:1px solid var(--border);
+      color:var(--accent-2);
+      flex-shrink:0;
+    }
+
+    .service-card h3{
+      color:var(--text-strong);
+      font-size:1.18rem;
+      margin-bottom:10px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .work-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .work-card{
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:var(--card-strong);
+    }
+
+    .work-media{
+      width:100%;
+      aspect-ratio:4/5;
+      overflow:hidden;
+      background:rgba(255,255,255,.24);
+    }
+
+    .work-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .work-body{
+      padding:24px;
+    }
+
+    .work-body h3{
+      color:var(--text-strong);
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .work-body p{
+      color:var(--muted);
+    }
+
+    .booking-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .booking-card,
+    .contact-card{
+      border-radius:30px;
+      padding:32px;
+    }
+
+    .steps{
+      display:grid;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .step{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:22px;
+      background:rgba(255,255,255,.36);
+      border:1px solid var(--border);
+    }
+
+    .step-number{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      flex-shrink:0;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 10px 24px rgba(185,141,119,.22);
+    }
+
+    .step h4{
+      color:var(--text-strong);
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin:22px 0 28px;
+    }
+
+    .contact-item{
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.34);
+      border:1px solid var(--border);
+    }
+
+    .contact-item strong{
+      display:block;
+      color:var(--text-strong);
+      margin-bottom:4px;
+    }
+
+    .contact-item span{
+      color:var(--muted);
+      display:block;
+    }
+
+    .cta-box{
+      border-radius:34px;
+      padding:38px;
+      text-align:center;
+    }
+
+    .cta-box h2{
+      color:var(--text-strong);
+      font-size:clamp(2rem,4vw,3.2rem);
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .cta-box p{
+      color:var(--muted);
+      max-width:700px;
+      margin:0 auto 26px;
+    }
+
+    footer{
+      position:relative;
+      z-index:3;
+      padding:28px 0 94px;
+    }
+
+    .footer-card{
+      border-radius:28px;
+      padding:24px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-card p{
+      color:var(--muted);
+    }
+
+    .footer-card a{
+      color:var(--accent-2);
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      z-index:1050;
+      background:rgba(255,255,255,.92);
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
+      border:1px solid rgba(0,0,0,.06);
+      transition:transform .25s ease, opacity .25s ease, bottom .25s ease;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-3px);
+    }
+
+    .whatsapp-float img{
+      width:33px;
+      height:33px;
+      object-fit:contain;
+    }
+
+    .whatsapp-float.hide-near-footer{
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(10px);
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .about-grid,
+      .booking-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual,
+      .about-media{
+        min-height:520px;
+      }
+
+      .services-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 820px){
+      body{
+        background-attachment:scroll;
+        background-position:center top;
+      }
+
+      .topbar-inner{
+        border-radius:24px;
+      }
+
+      .menu-toggle{
+        display:grid;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:100%;
+        left:12px;
+        right:12px;
+        margin-top:10px;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border-radius:24px;
+        background:var(--card-strong);
+        border:1px solid var(--border);
+        box-shadow:var(--shadow);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-10px);
+        transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
+      }
+
+      .nav-links.open{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+      }
+
+      .nav-links a{
+        width:100%;
+        border-radius:18px;
+      }
+
+      .services-grid,
+      .work-grid,
+      .about-list{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:30px;
+      }
+
+      .hero-card,
+      .about-content,
+      .booking-card,
+      .contact-card,
+      .cta-box{
+        padding:28px 22px;
+      }
+
+      .hero h1{
+        max-width:100%;
+      }
+
+      .hero-visual{
+        min-height:460px;
+      }
+
+      .about-media{
+        min-height:420px;
+      }
+
+      .section{
+        padding:74px 0;
+      }
+    }
+
+    @media (max-width: 560px){
+      .container{
+        width:min(calc(100% - 22px), var(--max));
+      }
+
+      .topbar{
+        padding:10px 0;
+      }
+
+      .topbar-inner{
+        width:min(calc(100% - 18px), var(--max));
+        padding:10px 12px;
+      }
+
+      .brand-logo{
+        width:48px;
+        height:48px;
+      }
+
+      .brand-copy strong{
+        font-size:.94rem;
+      }
+
+      .brand-copy span{
+        font-size:.8rem;
+      }
+
+      .theme-toggle,
+      .menu-toggle{
+        width:44px;
+        height:44px;
+      }
+
+      .hero-card{
+        padding:24px 18px;
+        border-radius:28px;
+      }
+
+      .hero-visual{
+        min-height:390px;
+        border-radius:28px;
+      }
+
+      .hero-badge{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        max-width:none;
+      }
+
+      .about-media{
+        min-height:360px;
+        border-radius:26px;
+      }
+
+      .about-content,
+      .booking-card,
+      .contact-card,
+      .cta-box{
+        padding:24px 18px;
+        border-radius:26px;
+      }
+
+      .service-card{
+        padding:22px 18px;
+        min-height:220px;
+        border-radius:24px;
+      }
+
+      .work-card{
+        border-radius:24px;
+      }
+
+      .work-body{
+        padding:20px 18px;
+      }
+
+      .step{
+        padding:16px;
+      }
+
+      footer{
+        padding-bottom:84px;
+      }
+
+      .whatsapp-float{
+        width:58px;
+        height:58px;
+        right:14px;
+        bottom:14px;
+      }
+
+      .whatsapp-float img{
+        width:31px;
+        height:31px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Reemplazar el numero en todos los enlaces de WhatsApp si queres usar el real -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner glass">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo">
+          <img src="https://iili.io/qsHFUiX.png" alt="Logo Roxana Stylist">
+        </div>
+        <div class="brand-copy">
+          <strong>Roxana Stylist</strong>
+          <span>Peluqueria y estilismo</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <div class="nav-links" id="mobileMenu">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre">Sobre mi</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#trabajos">Trabajos</a>
+          <a href="#reservas">Reservas</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="toolbar">
+          <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3V5M12 19V21M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M3 12H5M19 12H21M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93M16 12A4 4 0 1 1 8 12A4 4 0 0 1 16 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-card glass reveal">
+          <span class="eyebrow">Estilo, color y cuidado capilar</span>
+          <h1>Tu imagen, cuidada con detalle y profesionalismo</h1>
+          <p>
+            Un espacio pensado para realzar tu estilo con servicios de peluqueria, coloracion, nutricion capilar y peinados, con una atencion cercana, delicada y enfocada en cada clienta.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+          </div>
+
+          <div class="hero-chips">
+            <span>Atencion personalizada</span>
+            <span>Color y estilismo</span>
+            <span>Turnos por WhatsApp</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en peluqueria">
+          <div class="hero-badge glass">
+            <strong>Reservas simples y directas</strong>
+            <span>Elegis el servicio, escribis por WhatsApp y coordinas tu turno de forma rapida.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="https://iili.io/qiL6yMl.png" alt="Roxana Stylist">
+        </div>
+
+        <div class="about-content glass reveal">
+          <h2>Sobre Roxana</h2>
+          <p>
+            Roxana trabaja cada servicio con una mirada profesional, cuidando no solo el resultado final sino tambien el proceso, la salud del cabello y la experiencia de cada clienta.
+          </p>
+          <p>
+            La propuesta combina tecnica, estilo y cercania para lograr looks armoniosos, personalizados y alineados con lo que cada persona busca transmitir.
+          </p>
+
+          <ul class="about-list">
+            <li>Atencion dedicada en cada detalle</li>
+            <li>Asesoramiento segun tu estilo</li>
+            <li>Servicios pensados para realzar tu imagen</li>
+            <li>Resultados prolijos, femeninos y naturales</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2 class="section-title reveal">Servicios pensados para tu estilo</h2>
+        <p class="section-subtitle reveal">
+          Una propuesta completa para cuidar, renovar y potenciar tu imagen con una atencion profesional y personalizada.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Cortes y cambio de look</h3>
+                <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 7L10 17M5 7C6.7 7 8 8.3 8 10C8 11.7 6.7 13 5 13C3.3 13 2 11.7 2 10C2 8.3 3.3 7 5 7ZM19 11C20.7 11 22 12.3 22 14C22 15.7 20.7 17 19 17C17.3 17 16 15.7 16 14C16 12.3 17.3 11 19 11ZM8 10L16 14M8 10L17 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Coloracion y mechas</h3>
+                <p>Trabajos de color, iluminaciones, mechas y propuestas que respetan tu esencia y tu cabello.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3C15.866 3 19 6.134 19 10C19 15.25 12 21 12 21C12 21 5 15.25 5 10C5 6.134 8.134 3 12 3ZM12 7.5A2.5 2.5 0 1 0 12 12.5A2.5 2.5 0 0 0 12 7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Nutricion capilar</h3>
+                <p>Tratamientos orientados al cuidado, la reparacion y la mejora de la textura y el brillo.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 21C16.418 21 20 17.418 20 13C20 8 12 3 12 3C12 3 4 8 4 13C4 17.418 7.582 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 13.5C10 14.5 10.9 15.4 12 16C13.1 15.4 14 14.5 14.5 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Alisados</h3>
+                <p>Opciones para facilitar el peinado diario y lograr una terminacion prolija y cuidada.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 3V21M17 3V21M7 7H17M7 12H17M7 17H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Peinados y brushing</h3>
+                <p>Terminaciones suaves, elegantes y prolijas para eventos o para renovar tu look.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4C9 4 7 6 7 9C7 12 9 14 12 14C15 14 17 12 17 9C17 6 15 4 12 4Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 14C8 16.761 9.79 19 12 19C14.21 19 16 16.761 16 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-top">
+              <div>
+                <h3>Asesoramiento personalizado</h3>
+                <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, color y estilo.</p>
+              </div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 14C14.761 14 17 11.761 17 9C17 6.239 14.761 4 12 4C9.239 4 7 6.239 7 9C7 11.761 9.239 14 12 14Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M4 20C4.8 17.7 7 16 9.6 16H14.4C17 16 19.2 17.7 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trabajos">
+      <div class="container">
+        <h2 class="section-title reveal">Trabajo real, cuidado y dedicacion</h2>
+        <p class="section-subtitle reveal">
+          Imagenes pensadas para mostrar profesionalismo, proceso y atencion en cada servicio, sin tapar ni deformar las fotos.
+        </p>
+
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <div class="work-media">
+              <img src="https://iili.io/qiZ8i8u.png" alt="Roxana trabajando en un servicio de peluqueria">
+            </div>
+            <div class="work-body">
+              <h3>Atencion en cada detalle</h3>
+              <p>
+                Un trabajo delicado y profesional, enfocado en que cada resultado mantenga armonia, estilo y una terminacion prolija.
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card reveal">
+            <div class="work-media">
+              <img src="https://iili.io/qiZ8tZQ.png" alt="Roxana realizando un trabajo de estilismo">
+            </div>
+            <div class="work-body">
+              <h3>Experiencia personalizada</h3>
+              <p>
+                Cada servicio se adapta a la necesidad de la clienta, buscando una experiencia comoda y un resultado que acompañe su imagen.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reservas">
+      <div class="container booking-wrap">
+        <div class="booking-card glass reveal">
+          <h2 style="color:var(--text-strong); font-size:clamp(2rem,4vw,2.8rem); line-height:1.05; margin-bottom:14px;">Reserva tu turno por WhatsApp</h2>
+          <p style="color:var(--muted);">
+            Un sistema simple para que puedas consultar disponibilidad, elegir el servicio y coordinar dia y horario de forma directa.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h4>Elegis el servicio</h4>
+                <p>Nos contas que queres hacerte o te asesoramos segun tu necesidad.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <h4>Escribis por WhatsApp</h4>
+                <p>Envias tu consulta y coordinas de forma rapida y directa.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <h4>Confirmas tu turno</h4>
+                <p>Definimos dia, horario y detalles para que tu visita sea comoda y organizada.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-card glass reveal" id="contacto">
+          <h2 style="color:var(--text-strong); font-size:clamp(1.8rem,3.5vw,2.4rem); line-height:1.08; margin-bottom:12px;">Contacto</h2>
+          <p style="color:var(--muted);">
+            Si queres reservar, consultar por un servicio o recibir mas informacion, podes escribir de forma directa.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>WhatsApp</strong>
+              <span>+54 9 11 0000 0000</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Instagram</strong>
+              <span>@roxana.stylist</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Ubicacion</strong>
+              <span>Agregar direccion exacta</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Horarios</strong>
+              <span>Agregar dias y horarios de atencion</span>
+            </div>
+          </div>
+
+          <a class="btn btn-secondary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20mas%20informacion%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box glass reveal">
+          <h2>Renova tu estilo con una atencion profesional y cercana</h2>
+          <p>
+            Una propuesta pensada para que te sientas comoda, acompañada y segura en cada cambio, con resultados delicados y un contacto simple por WhatsApp.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-card glass">
+        <p>Roxana Stylist | Peluqueria y estilismo con reservas por WhatsApp.</p>
+        <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    id="whatsappFloat"
+    href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("roxana-theme");
+    if(savedTheme === "dark"){
+      body.classList.add("dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      localStorage.setItem("roxana-theme", body.classList.contains("dark") ? "dark" : "light");
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const topbar = document.getElementById("topbar");
+    let lastScroll = window.scrollY;
+
+    const handleHeader = () => {
+      const current = window.scrollY;
+
+      if(current > 12){
+        topbar.classList.add("scrolled");
+      } else {
+        topbar.classList.remove("scrolled");
+      }
+
+      if(window.innerWidth > 820){
+        topbar.classList.remove("hide");
+        lastScroll = current;
+        return;
+      }
+
+      if(current > lastScroll && current > 120){
+        topbar.classList.add("hide");
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      } else {
+        topbar.classList.remove("hide");
+      }
+
+      lastScroll = current;
+    };
+
+    window.addEventListener("scroll", handleHeader);
+
+    const footer = document.getElementById("footer");
+    const whatsappFloat = document.getElementById("whatsappFloat");
+
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          whatsappFloat.classList.add("hide-near-footer");
+        } else {
+          whatsappFloat.classList.remove("hide-near-footer");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    footerObserver.observe(footer);
+  </script>
+</body>
+</html>
