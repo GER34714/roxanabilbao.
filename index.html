@@ -162,7 +162,7 @@
       top:0;
       z-index:1200;
       padding:14px 0;
-      transition:transform .35s ease, background .35s ease, box-shadow .35s ease;
+      transition:background .35s ease, box-shadow .35s ease;
     }
 
     .topbar.scrolled .topbar-inner{
@@ -479,47 +479,36 @@
     .services-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:18px;
+      gap:16px;
     }
 
     .service-card{
-      border-radius:28px;
-      padding:26px;
-      min-height:240px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      border-radius:24px;
+      padding:20px 18px;
+      min-height:unset;
+      display:block;
     }
 
     .service-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:22px;
+      display:block;
+      margin-bottom:0;
     }
 
     .service-icon{
-      width:52px;
-      height:52px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:rgba(255,255,255,.42);
-      border:1px solid var(--border);
-      color:var(--accent-2);
-      flex-shrink:0;
+      display:none;
     }
 
     .service-card h3{
       color:var(--text-strong);
-      font-size:1.18rem;
-      margin-bottom:10px;
+      font-size:1.05rem;
+      line-height:1.2;
+      margin-bottom:8px;
     }
 
     .service-card p{
       color:var(--muted);
-      font-size:.98rem;
+      font-size:.94rem;
+      line-height:1.48;
     }
 
     .premium-grid{
@@ -633,7 +622,8 @@
     .premium-media video{
       width:100%;
       height:auto;
-      aspect-ratio:9/16;
+      aspect-ratio:4/5;
+      max-height:520px;
       display:block;
       object-fit:cover;
       background:#000;
@@ -1058,9 +1048,19 @@
       }
 
       .service-card{
-        padding:22px 18px;
-        min-height:220px;
-        border-radius:24px;
+        padding:16px 15px;
+        min-height:unset;
+        border-radius:20px;
+      }
+
+      .service-card h3{
+        font-size:1rem;
+        margin-bottom:6px;
+      }
+
+      .service-card p{
+        font-size:.9rem;
+        line-height:1.42;
       }
 
       .premium-card{
@@ -1070,6 +1070,11 @@
 
       .premium-media{
         border-radius:20px;
+      }
+
+      .premium-media video{
+        aspect-ratio:9/14;
+        max-height:430px;
       }
 
       .work-card,
@@ -1212,9 +1217,6 @@
                 <h3>Cortes y cambio de look</h3>
                 <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
               </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 7L10 17M5 7C6.7 7 8 8.3 8 10C8 11.7 6.7 13 5 13C3.3 13 2 11.7 2 10C2 8.3 3.3 7 5 7ZM19 11C20.7 11 22 12.3 22 14C22 15.7 20.7 17 19 17C17.3 17 16 15.7 16 14C16 12.3 17.3 11 19 11ZM8 10L16 14M8 10L17 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
             </div>
           </article>
 
@@ -1223,9 +1225,6 @@
               <div>
                 <h3>Coloración y mechas</h3>
                 <p>Trabajos de color, iluminaciones, mechas y propuestas que respetan tu esencia y tu cabello.</p>
-              </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C15.866 3 19 6.134 19 10C19 15.25 12 21 12 21C12 21 5 15.25 5 10C5 6.134 8.134 3 12 3ZM12 7.5A2.5 2.5 0 1 0 12 12.5A2.5 2.5 0 0 0 12 7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </div>
           </article>
@@ -1236,9 +1235,6 @@
                 <h3>Nutrición capilar</h3>
                 <p>Tratamientos orientados al cuidado, la reparación y la mejora de la textura y el brillo.</p>
               </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.418 21 20 17.418 20 13C20 8 12 3 12 3C12 3 4 8 4 13C4 17.418 7.582 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 13.5C10 14.5 10.9 15.4 12 16C13.1 15.4 14 14.5 14.5 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
             </div>
           </article>
 
@@ -1247,9 +1243,6 @@
               <div>
                 <h3>Alisados</h3>
                 <p>Opciones para facilitar el peinado diario y lograr una terminación prolija y cuidada.</p>
-              </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 3V21M17 3V21M7 7H17M7 12H17M7 17H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
               </div>
             </div>
           </article>
@@ -1260,9 +1253,6 @@
                 <h3>Peinados y brushing</h3>
                 <p>Terminaciones suaves, elegantes y prolijas para eventos o para renovar tu look.</p>
               </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4C9 4 7 6 7 9C7 12 9 14 12 14C15 14 17 12 17 9C17 6 15 4 12 4Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 14C8 16.761 9.79 19 12 19C14.21 19 16 16.761 16 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
             </div>
           </article>
 
@@ -1271,9 +1261,6 @@
               <div>
                 <h3>Asesoramiento personalizado</h3>
                 <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, color y estilo.</p>
-              </div>
-              <div class="service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 14C14.761 14 17 11.761 17 9C17 6.239 14.761 4 12 4C9.239 4 7 6.239 7 9C7 11.761 9.239 14 12 14Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20C4.8 17.7 7 16 9.6 16H14.4C17 16 19.2 17.7 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
               </div>
             </div>
           </article>
@@ -1607,18 +1594,12 @@
         topbar.classList.remove("scrolled");
       }
 
-      if(window.innerWidth > 820){
-        topbar.classList.remove("hide");
-        lastScroll = current;
-        return;
-      }
+      topbar.classList.remove("hide");
 
-      if(current > lastScroll && current > 120){
+      if(window.innerWidth <= 820 && current > lastScroll && current > 120){
         topbar.classList.add("hide");
         mobileMenu.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
-      } else {
-        topbar.classList.remove("hide");
       }
 
       lastScroll = current;
