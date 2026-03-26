@@ -26,12 +26,15 @@
       --solid-1:#f5ede7;
       --solid-2:#f8f2ed;
       --solid-3:#efe3da;
+      --solid-4:#eaded4;
       --text:#4f3c36;
       --text-strong:#2f211d;
       --muted:#6f5951;
       --border:rgba(133,103,91,.14);
       --accent:#c9a996;
       --accent-2:#b98d77;
+      --gold:#c8a56a;
+      --gold-2:#b78946;
       --shadow:0 14px 40px rgba(83,58,50,.10);
       --max:1180px;
     }
@@ -43,12 +46,15 @@
       --solid-1:#2d2422;
       --solid-2:#342927;
       --solid-3:#3a2d29;
+      --solid-4:#2b221f;
       --text:#f1e5dd;
       --text-strong:#fff8f4;
       --muted:#dfc9bf;
       --border:rgba(255,237,227,.10);
       --accent:#d1a48b;
       --accent-2:#e1b69e;
+      --gold:#d8b57a;
+      --gold-2:#e7c894;
       --shadow:0 14px 40px rgba(0,0,0,.28);
     }
 
@@ -61,22 +67,6 @@
       background:var(--bg);
       overflow-x:hidden;
       line-height:1.55;
-    }
-
-    body.has-bg{
-      background-image:
-        linear-gradient(rgba(247,240,234,.24), rgba(247,240,234,.24)),
-        url("https://iili.io/qip0l3v.jpg");
-      background-size:cover;
-      background-position:center top;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-    }
-
-    body.dark.has-bg{
-      background-image:
-        linear-gradient(rgba(20,16,15,.34), rgba(20,16,15,.34)),
-        url("https://iili.io/qip0l3v.jpg");
     }
 
     img{ display:block; max-width:100%; }
@@ -113,30 +103,25 @@
     .bg-solid-1{ background:var(--solid-1); }
     .bg-solid-2{ background:var(--solid-2); }
     .bg-solid-3{ background:var(--solid-3); }
+    .bg-solid-4{ background:var(--solid-4); }
 
     .section-title{
-      max-width:700px;
+      max-width:760px;
       margin:0 auto 18px;
       text-align:center;
       color:var(--text-strong);
       font-size:clamp(2rem, 4vw, 3rem);
       line-height:1.08;
       letter-spacing:-0.03em;
-      text-shadow:0 2px 10px rgba(255,255,255,.20);
     }
 
-    body.dark .section-title{ text-shadow:0 2px 10px rgba(0,0,0,.24); }
-
     .section-subtitle{
-      max-width:760px;
+      max-width:780px;
       margin:0 auto 46px;
       text-align:center;
       color:var(--muted);
       font-size:1.02rem;
-      text-shadow:0 1px 8px rgba(255,255,255,.16);
     }
-
-    body.dark .section-subtitle{ text-shadow:0 1px 8px rgba(0,0,0,.18); }
 
     .glass{
       background:var(--card);
@@ -311,6 +296,12 @@
       color:var(--text-strong);
     }
 
+    .btn-gold{
+      color:#fffaf4;
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow:0 14px 30px rgba(183,137,70,.24);
+    }
+
     .hero{
       padding:58px 0 72px;
       position:relative;
@@ -454,7 +445,7 @@
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:14px;
-      margin-top:24px;
+      margin:24px 0;
     }
 
     .about-list li{
@@ -481,15 +472,6 @@
       display:block;
     }
 
-    .service-top{
-      display:block;
-      margin-bottom:0;
-    }
-
-    .service-icon{
-      display:none;
-    }
-
     .service-card h3{
       color:var(--text-strong);
       font-size:1.05rem;
@@ -501,6 +483,151 @@
       color:var(--muted);
       font-size:.94rem;
       line-height:1.48;
+    }
+
+    .trajectory-shell{
+      border-radius:38px;
+      padding:34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
+        linear-gradient(135deg, rgba(200,165,106,.10), transparent 34%, transparent 66%, rgba(200,165,106,.08)),
+        var(--card);
+      border:1px solid rgba(200,165,106,.18);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .trajectory-top{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+
+    .trajectory-top .section-title,
+    .trajectory-top .section-subtitle{
+      text-align:left;
+      margin-left:0;
+      margin-right:0;
+    }
+
+    .trajectory-intro{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:start;
+      margin-bottom:24px;
+    }
+
+    .trajectory-story,
+    .trajectory-proof{
+      border-radius:28px;
+      padding:26px;
+      background:rgba(255,255,255,.26);
+      border:1px solid rgba(200,165,106,.14);
+    }
+
+    .trajectory-story h3,
+    .trajectory-proof h3{
+      color:var(--text-strong);
+      font-size:1.3rem;
+      margin-bottom:12px;
+    }
+
+    .trajectory-story p,
+    .trajectory-proof p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    .trajectory-highlights{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin-bottom:26px;
+    }
+
+    .trajectory-stat{
+      border-radius:24px;
+      padding:22px 18px;
+      background:rgba(255,255,255,.26);
+      border:1px solid rgba(200,165,106,.16);
+      text-align:center;
+    }
+
+    .trajectory-stat strong{
+      display:block;
+      color:var(--text-strong);
+      font-size:1.6rem;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .trajectory-stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.35;
+    }
+
+    .trajectory-gallery-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+
+    .trajectory-gallery-head h3{
+      color:var(--text-strong);
+      font-size:1.35rem;
+    }
+
+    .trajectory-gallery-head p{
+      color:var(--muted);
+      max-width:640px;
+    }
+
+    .trajectory-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .trajectory-card{
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(200,165,106,.16);
+      background:rgba(255,255,255,.22);
+      padding:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      aspect-ratio:4/5;
+      box-shadow:0 12px 30px rgba(83,58,50,.08);
+    }
+
+    .trajectory-card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:16px;
+    }
+
+    .trajectory-card.is-hidden{
+      display:none;
+    }
+
+    .trajectory-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      margin-top:26px;
+      flex-wrap:wrap;
     }
 
     .premium-grid{
@@ -661,10 +788,6 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-    }
-
-    .premium-actions .btn-secondary{
-      background:rgba(255,255,255,.28);
     }
 
     .work-grid{
@@ -915,7 +1038,8 @@
     @media (max-width: 1080px){
       .hero-grid,
       .about-grid,
-      .booking-wrap{
+      .booking-wrap,
+      .trajectory-intro{
         grid-template-columns:1fr;
       }
 
@@ -930,7 +1054,8 @@
 
       .services-grid,
       .gallery-grid,
-      .premium-grid{
+      .premium-grid,
+      .trajectory-grid{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
 
@@ -942,6 +1067,10 @@
         height:460px;
         min-height:460px;
         max-height:460px;
+      }
+
+      .trajectory-highlights{
+        grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
 
@@ -989,8 +1118,15 @@
       .gallery-grid,
       .about-list,
       .premium-grid,
-      .premium-includes{
+      .premium-includes,
+      .trajectory-grid,
+      .trajectory-highlights{
         grid-template-columns:1fr;
+      }
+
+      .trajectory-top{
+        grid-template-columns:1fr;
+        align-items:start;
       }
 
       .hero{
@@ -1001,7 +1137,8 @@
       .about-content,
       .booking-card,
       .contact-card,
-      .cta-box{
+      .cta-box,
+      .trajectory-shell{
         padding:28px 22px;
       }
 
@@ -1090,7 +1227,8 @@
       .about-content,
       .booking-card,
       .contact-card,
-      .cta-box{
+      .cta-box,
+      .trajectory-shell{
         padding:24px 18px;
         border-radius:26px;
       }
@@ -1127,12 +1265,14 @@
       }
 
       .work-card,
-      .gallery-card{
+      .gallery-card,
+      .trajectory-card{
         border-radius:24px;
       }
 
       .work-media,
-      .gallery-card{
+      .gallery-card,
+      .trajectory-card{
         padding:10px;
       }
 
@@ -1143,7 +1283,8 @@
       }
 
       .work-media img,
-      .gallery-card img{
+      .gallery-card img,
+      .trajectory-card img{
         border-radius:14px;
       }
 
@@ -1186,6 +1327,7 @@
         <div class="nav-links" id="mobileMenu">
           <a href="#inicio">Inicio</a>
           <a href="#sobre">Sobre mí</a>
+          <a href="#trayectoria">Trayectoria</a>
           <a href="#servicios">Servicios</a>
           <a href="#trabajos">Trabajos</a>
           <a href="#premium">Premium</a>
@@ -1260,6 +1402,112 @@
             <li>Servicios pensados para realzar tu imagen</li>
             <li>Resultados prolijos, femeninos y naturales</li>
           </ul>
+
+          <a class="btn btn-gold" href="#trayectoria">Ver trayectoria profesional</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-4" id="trayectoria">
+      <div class="container">
+        <div class="trajectory-shell reveal">
+          <div class="trajectory-top">
+            <div>
+              <h2 class="section-title">Trayectoria, competencia y formación que respaldan su carrera</h2>
+              <p class="section-subtitle">
+                Una sección dedicada a su camino profesional, construida con la información de su propia historia: años de competencia, docencia, premios y trabajo constante dentro de la peluquería.
+              </p>
+            </div>
+            <a class="btn btn-secondary" href="#inicio">Volver al inicio</a>
+          </div>
+
+          <div class="trajectory-intro">
+            <article class="trajectory-story reveal">
+              <h3>Una carrera construida con experiencia real</h3>
+              <p>
+                Roxana no solo desarrolló su trabajo dentro del salón, sino también en espacios de formación y competencia profesional. Parte importante de su camino estuvo marcada por campeonatos de peluquería y años de perfeccionamiento constante.
+              </p>
+              <p>
+                Participó durante 20 años en competencias de distintos rubros, incluyendo corte, color, peinados y peinados artísticos, dentro del marco de FAPIA. Ese recorrido forma parte de la trayectoria que hoy respalda cada servicio que ofrece.
+              </p>
+              <p>
+                También se desempeñó como docente e instructora de peluquería femenina en la Sociedad de Peluqueros de la Provincia de Tucumán, sumando a su carrera la formación de nuevas profesionales.
+              </p>
+            </article>
+
+            <article class="trajectory-proof reveal">
+              <h3>Lo que ella misma destaca de su recorrido</h3>
+              <p>
+                Fue dos años consecutivos campeona nacional por equipo en FAPIA, y considera que gran parte de lo que es como profesional se lo debe a la competencia, al trabajo sostenido y a todos esos años de crecimiento dentro del oficio.
+              </p>
+              <p>
+                Su trayectoria está acompañada por copas, premios, experiencias como docente y una historia profesional de la que se siente profundamente orgullosa.
+              </p>
+              <p>
+                Esta galería reúne parte de ese recorrido para mostrar no solo resultados, sino también el camino, la formación y el reconocimiento que la acompañan.
+              </p>
+            </article>
+          </div>
+
+          <div class="trajectory-highlights">
+            <div class="trajectory-stat reveal">
+              <strong>20 años</strong>
+              <span>de participación en competencias de peluquería</span>
+            </div>
+            <div class="trajectory-stat reveal">
+              <strong>2 años</strong>
+              <span>campeona nacional por equipo en FAPIA</span>
+            </div>
+            <div class="trajectory-stat reveal">
+              <strong>4 rubros</strong>
+              <span>corte, color, peinados y peinados artísticos</span>
+            </div>
+            <div class="trajectory-stat reveal">
+              <strong>Docencia</strong>
+              <span>instructora de peluquería femenina en Tucumán</span>
+            </div>
+          </div>
+
+          <div class="trajectory-gallery-head reveal">
+            <div>
+              <h3>Galería de trayectoria profesional</h3>
+              <p>
+                Campeonatos, premios, formación, docencia y momentos que forman parte de una carrera profesional construida con años de práctica, competencia y dedicación.
+              </p>
+            </div>
+          </div>
+
+          <div class="trajectory-grid" id="trajectoryGrid">
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZB8LyF.png" alt="Trayectoria Roxana 1"></article>
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZB8DZJ.png" alt="Trayectoria Roxana 2"></article>
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZB8ZTg.png" alt="Trayectoria Roxana 3"></article>
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZB8tja.png" alt="Trayectoria Roxana 4"></article>
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZBSfZG.png" alt="Trayectoria Roxana 5"></article>
+            <article class="trajectory-card reveal"><img src="https://iili.io/qZBSCG4.png" alt="Trayectoria Roxana 6"></article>
+
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSxF2.png" alt="Trayectoria Roxana 7"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSAue.png" alt="Trayectoria Roxana 8"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBS1cB.png" alt="Trayectoria Roxana 9"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSE8P.png" alt="Trayectoria Roxana 10"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSVAF.png" alt="Trayectoria Roxana 11"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSwMv.png" alt="Trayectoria Roxana 12"></article>
+
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSPVf.png" alt="Trayectoria Roxana 13"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSbR9.png" alt="Trayectoria Roxana 14"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSLKl.png" alt="Trayectoria Roxana 15"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBSmNe.png" alt="Trayectoria Roxana 16"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBUfHP.png" alt="Trayectoria Roxana 17"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBUxWJ.png" alt="Trayectoria Roxana 18"></article>
+
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBUulp.png" alt="Trayectoria Roxana 19"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBUTfR.png" alt="Trayectoria Roxana 20"></article>
+            <article class="trajectory-card reveal is-hidden"><img src="https://iili.io/qZBUlxs.png" alt="Trayectoria Roxana 21"></article>
+          </div>
+
+          <div class="trajectory-actions">
+            <button class="btn btn-secondary" id="trajectoryMoreBtn" type="button">Ver más trayectoria</button>
+            <a class="btn btn-gold" href="#inicio">Volver al inicio</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1273,57 +1521,33 @@
 
         <div class="services-grid">
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Cortes y cambio de look</h3>
-                <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
-              </div>
-            </div>
+            <h3>Cortes y cambio de look</h3>
+            <p>Cortes femeninos y asesoramiento para encontrar un estilo que acompañe tu imagen.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Coloración y mechas</h3>
-                <p>Trabajos de color, iluminaciones, mechas y propuestas que respetan tu esencia y tu cabello.</p>
-              </div>
-            </div>
+            <h3>Coloración y mechas</h3>
+            <p>Trabajos de color, iluminaciones, mechas y propuestas que respetan tu esencia y tu cabello.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Nutrición capilar</h3>
-                <p>Tratamientos orientados al cuidado, la reparación y la mejora de la textura y el brillo.</p>
-              </div>
-            </div>
+            <h3>Nutrición capilar</h3>
+            <p>Tratamientos orientados al cuidado, la reparación y la mejora de la textura y el brillo.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Alisados</h3>
-                <p>Opciones para facilitar el peinado diario y lograr una terminación prolija y cuidada.</p>
-              </div>
-            </div>
+            <h3>Alisados</h3>
+            <p>Opciones para facilitar el peinado diario y lograr una terminación prolija y cuidada.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Peinados y brushing</h3>
-                <p>Terminaciones suaves, elegantes y prolijas para eventos o para renovar tu look.</p>
-              </div>
-            </div>
+            <h3>Peinados y brushing</h3>
+            <p>Terminaciones suaves, elegantes y prolijas para eventos o para renovar tu look.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <div class="service-top">
-              <div>
-                <h3>Asesoramiento personalizado</h3>
-                <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, color y estilo.</p>
-              </div>
-            </div>
+            <h3>Asesoramiento personalizado</h3>
+            <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, color y estilo.</p>
           </article>
         </div>
       </div>
@@ -1639,6 +1863,28 @@
         if(galleryStep * 3 >= hiddenGalleryItems.length){
           galleryMoreWrap.classList.add("hidden");
           galleryInstagramWrap.classList.remove("hidden");
+        }
+      });
+    }
+
+    const trajectoryMoreBtn = document.getElementById("trajectoryMoreBtn");
+    const hiddenTrajectoryItems = Array.from(document.querySelectorAll(".trajectory-card.is-hidden"));
+    let trajectoryStep = 0;
+
+    if(trajectoryMoreBtn){
+      trajectoryMoreBtn.addEventListener("click", () => {
+        const start = trajectoryStep * 6;
+        const itemsToShow = hiddenTrajectoryItems.slice(start, start + 6);
+
+        itemsToShow.forEach(item => {
+          item.classList.remove("is-hidden");
+          revealObserver.observe(item);
+        });
+
+        trajectoryStep += 1;
+
+        if(trajectoryStep * 6 >= hiddenTrajectoryItems.length){
+          trajectoryMoreBtn.style.display = "none";
         }
       });
     }
