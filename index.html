@@ -293,6 +293,8 @@
       font-weight:700;
       transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
       text-align:center;
+      cursor:pointer;
+      font:inherit;
     }
 
     .btn:hover{ transform:translateY(-2px); }
@@ -520,6 +522,164 @@
       font-size:.98rem;
     }
 
+    .premium-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:22px;
+    }
+
+    .premium-card{
+      position:relative;
+      border-radius:32px;
+      padding:22px;
+      overflow:hidden;
+      border:1px solid rgba(201,169,150,.26);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.10)),
+        rgba(255,248,243,.42);
+      box-shadow:
+        0 18px 44px rgba(83,58,50,.12),
+        inset 0 1px 0 rgba(255,255,255,.26);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    body.dark .premium-card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)),
+        rgba(47,37,34,.54);
+      border-color:rgba(225,182,158,.18);
+      box-shadow:
+        0 18px 44px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(226,194,150,.18), transparent 38%, transparent 62%, rgba(226,194,150,.10));
+      pointer-events:none;
+    }
+
+    .premium-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.34);
+      border:1px solid rgba(201,169,150,.28);
+      color:var(--text-strong);
+      font-size:.88rem;
+    }
+
+    .premium-glow{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      color:#9e755c;
+      background:linear-gradient(135deg, rgba(255,240,224,.8), rgba(223,188,151,.38));
+      border:1px solid rgba(210,177,139,.36);
+      box-shadow:0 12px 26px rgba(201,169,150,.20);
+      flex-shrink:0;
+    }
+
+    body.dark .premium-glow{
+      color:#efc8ad;
+      background:linear-gradient(135deg, rgba(98,71,56,.62), rgba(177,132,98,.18));
+      border-color:rgba(225,182,158,.18);
+    }
+
+    .premium-card h3{
+      color:var(--text-strong);
+      font-size:clamp(1.45rem, 3vw, 2rem);
+      line-height:1.05;
+      margin-bottom:10px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-card > p{
+      color:var(--muted);
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-media{
+      position:relative;
+      z-index:1;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(201,169,150,.22);
+      background:rgba(255,255,255,.18);
+      margin-bottom:18px;
+      box-shadow:0 14px 26px rgba(83,58,50,.10);
+    }
+
+    .premium-media video{
+      width:100%;
+      height:auto;
+      aspect-ratio:9/16;
+      display:block;
+      object-fit:cover;
+      background:#000;
+    }
+
+    .premium-includes{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-bottom:20px;
+    }
+
+    .premium-includes li{
+      padding:14px 14px 14px 16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.28);
+      border:1px solid rgba(201,169,150,.18);
+      color:var(--text);
+      font-size:.95rem;
+    }
+
+    .premium-note{
+      position:relative;
+      z-index:1;
+      border-radius:20px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.24);
+      border:1px solid rgba(201,169,150,.18);
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .premium-actions{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .premium-actions .btn-secondary{
+      background:rgba(255,255,255,.28);
+    }
+
     .work-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -582,6 +742,20 @@
       aspect-ratio:4/5;
       object-fit:cover;
       object-position:center;
+    }
+
+    .gallery-card.is-hidden{
+      display:none;
+    }
+
+    .gallery-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:28px;
+    }
+
+    .gallery-actions.hidden{
+      display:none;
     }
 
     .booking-wrap{
@@ -749,7 +923,8 @@
       }
 
       .services-grid,
-      .gallery-grid{
+      .gallery-grid,
+      .premium-grid{
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
     }
@@ -796,7 +971,9 @@
       .services-grid,
       .work-grid,
       .gallery-grid,
-      .about-list{
+      .about-list,
+      .premium-grid,
+      .premium-includes{
         grid-template-columns:1fr;
       }
 
@@ -886,6 +1063,15 @@
         border-radius:24px;
       }
 
+      .premium-card{
+        padding:18px;
+        border-radius:26px;
+      }
+
+      .premium-media{
+        border-radius:20px;
+      }
+
       .work-card,
       .gallery-card{
         border-radius:24px;
@@ -932,6 +1118,7 @@
           <a href="#sobre">Sobre mí</a>
           <a href="#servicios">Servicios</a>
           <a href="#trabajos">Trabajos</a>
+          <a href="#premium">Premium</a>
           <a href="#galeria">Galería</a>
           <a href="#reservas">Reservas</a>
           <a href="#contacto">Contacto</a>
@@ -965,7 +1152,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
             <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
           </div>
 
@@ -1094,6 +1281,87 @@
       </div>
     </section>
 
+    <section class="section bg-solid-3" id="premium">
+      <div class="container">
+        <h2 class="section-title reveal">Experiencias premium para momentos inolvidables</h2>
+        <p class="section-subtitle reveal">
+          Dos propuestas pensadas para vivir la previa con calma, emoción y detalles que transforman el servicio en una experiencia mucho más especial.
+        </p>
+
+        <div class="premium-grid">
+          <article class="premium-card reveal">
+            <div class="premium-head">
+              <span class="premium-tag">Novias Premium</span>
+              <div class="premium-glow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4C13.2 6.6 15.4 8.8 18 10C15.4 11.2 13.2 13.4 12 16C10.8 13.4 8.6 11.2 6 10C8.6 8.8 10.8 6.6 12 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 4V8M21 6H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+
+            <h3>Una previa íntima, cuidada y llena de detalles</h3>
+            <p>
+              Un servicio pensado para que la novia viva uno de los momentos más importantes de su vida con atención exclusiva, calma y una ambientación que acompaña la emoción de ese día.
+            </p>
+
+            <div class="premium-media">
+              <video src="https://fhxcumwhgtfirznnznjx.supabase.co/storage/v1/object/public/video%20ciborg%20347/roxana%201%20.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <ul class="premium-includes">
+              <li>Asesoramiento previo de peinado</li>
+              <li>Espacio privado y personalizado</li>
+              <li>Batas y pantuflas para la experiencia</li>
+              <li>Bebidas, snacks, música y aromas</li>
+              <li>Atención delicada y acompañamiento cercano</li>
+              <li>Ideal para novia sola o con acompañantes</li>
+            </ul>
+
+            <div class="premium-note">
+              Más que prepararte, la idea es que disfrutes la previa y te sientas segura, contenida y radiante desde el primer momento.
+            </div>
+
+            <div class="premium-actions">
+              <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20Novias%20Premium." target="_blank" rel="noopener noreferrer">Consultar Novias Premium</a>
+            </div>
+          </article>
+
+          <article class="premium-card reveal">
+            <div class="premium-head">
+              <span class="premium-tag">15 Premium</span>
+              <div class="premium-glow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.2 8.1L20 9L15.8 13.1L16.8 19L12 16.3L7.2 19L8.2 13.1L4 9L9.8 8.1L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+
+            <h3>Una experiencia especial para atesorar antes del gran momento</h3>
+            <p>
+              Pensado para quinceañeras que quieren vivir su previa como un recuerdo único, compartiendo ese instante con emoción, amor y una ambientación que acompañe la ocasión.
+            </p>
+
+            <div class="premium-media">
+              <video src="https://fhxcumwhgtfirznnznjx.supabase.co/storage/v1/object/public/video%20ciborg%20347/roxana%202.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <ul class="premium-includes">
+              <li>Asesoramiento previo del peinado</li>
+              <li>Espacio íntimo y personalizado</li>
+              <li>Experiencia para compartir con personas importantes</li>
+              <li>Ambientación cuidada y detalles premium</li>
+              <li>Peinado pensado para acompañar el estilo del evento</li>
+              <li>Una previa emocional, prolija y especial</li>
+            </ul>
+
+            <div class="premium-note">
+              No es solo peinar. Es acompañar un instante inolvidable para que esa previa también forme parte del recuerdo.
+            </div>
+
+            <div class="premium-actions">
+              <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%2015%20Premium." target="_blank" rel="noopener noreferrer">Consultar 15 Premium</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section bg-solid-3" id="trabajos">
       <div class="container">
         <h2 class="section-title reveal">Trabajo real, cuidado y dedicación</h2>
@@ -1132,16 +1400,26 @@
           Una selección de trabajos para mostrar estilos, terminaciones y resultados reales, manteniendo las imágenes limpias y bien encuadradas.
         </p>
 
-        <div class="gallery-grid">
+        <div class="gallery-grid" id="galleryGrid">
           <article class="gallery-card reveal"><img src="https://iili.io/qiZlsFS.png" alt="Resultado de trabajo de peluquería 1"></article>
           <article class="gallery-card reveal"><img src="https://iili.io/qiZ0TlI.png" alt="Resultado de trabajo de peluquería 2"></article>
           <article class="gallery-card reveal"><img src="https://iili.io/qiZayOb.png" alt="Resultado de trabajo de peluquería 3"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZcdWQ.png" alt="Resultado de trabajo de peluquería 4"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZcFqB.png" alt="Resultado de trabajo de peluquería 5"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZ0cxf.png" alt="Resultado de trabajo de peluquería 6"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZ0RHX.png" alt="Resultado de trabajo de peluquería 7"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZ0Nxj.png" alt="Resultado de trabajo de peluquería 8"></article>
-          <article class="gallery-card reveal"><img src="https://iili.io/qiZcPYF.png" alt="Resultado de trabajo de peluquería 9"></article>
+
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcdWQ.png" alt="Resultado de trabajo de peluquería 4"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcFqB.png" alt="Resultado de trabajo de peluquería 5"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0cxf.png" alt="Resultado de trabajo de peluquería 6"></article>
+
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0RHX.png" alt="Resultado de trabajo de peluquería 7"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0Nxj.png" alt="Resultado de trabajo de peluquería 8"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcPYF.png" alt="Resultado de trabajo de peluquería 9"></article>
+        </div>
+
+        <div class="gallery-actions reveal" id="galleryMoreWrap">
+          <button class="btn btn-secondary" id="galleryMoreBtn" type="button">Ver más</button>
+        </div>
+
+        <div class="gallery-actions hidden" id="galleryInstagramWrap">
+          <a class="btn btn-primary" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Ver en Instagram</a>
         </div>
       </div>
     </section>
@@ -1181,7 +1459,7 @@
           </div>
 
           <div style="margin-top:24px;">
-            <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
           </div>
         </div>
 
@@ -1194,7 +1472,7 @@
           <div class="contact-list">
             <div class="contact-item">
               <strong>WhatsApp</strong>
-              <span>+54 9 11 0000 0000</span>
+              <span>+54 381 463-0700</span>
             </div>
 
             <div class="contact-item">
@@ -1213,7 +1491,7 @@
             </div>
           </div>
 
-          <a class="btn btn-secondary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20más%20información%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
+          <a class="btn btn-secondary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20mas%20informacion%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
         </div>
       </div>
     </section>
@@ -1225,7 +1503,7 @@
           <p>
             Una propuesta pensada para que te sientas cómoda, acompañada y segura en cada cambio, con resultados delicados y un contacto simple por WhatsApp.
           </p>
-          <a class="btn btn-primary" href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno</a>
+          <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno</a>
         </div>
       </div>
     </section>
@@ -1243,7 +1521,7 @@
   <a
     class="whatsapp-float"
     id="whatsappFloat"
-    href="https://wa.me/5491100000000?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno."
+    href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="WhatsApp"
@@ -1292,6 +1570,31 @@
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    const galleryMoreBtn = document.getElementById("galleryMoreBtn");
+    const galleryMoreWrap = document.getElementById("galleryMoreWrap");
+    const galleryInstagramWrap = document.getElementById("galleryInstagramWrap");
+    const hiddenGalleryItems = Array.from(document.querySelectorAll(".gallery-card.is-hidden"));
+    let galleryStep = 0;
+
+    if(galleryMoreBtn){
+      galleryMoreBtn.addEventListener("click", () => {
+        const start = galleryStep * 3;
+        const itemsToShow = hiddenGalleryItems.slice(start, start + 3);
+
+        itemsToShow.forEach(item => {
+          item.classList.remove("is-hidden");
+          revealObserver.observe(item);
+        });
+
+        galleryStep += 1;
+
+        if(galleryStep * 3 >= hiddenGalleryItems.length){
+          galleryMoreWrap.classList.add("hidden");
+          galleryInstagramWrap.classList.remove("hidden");
+        }
+      });
+    }
+
     const topbar = document.getElementById("topbar");
     let lastScroll = window.scrollY;
 
@@ -1328,7 +1631,7 @@
 
     const footerObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(window.innerWidth <= 560 && entry.isIntersecting){
+        if(window.innerWidth <= 820 && entry.isIntersecting){
           whatsappFloat.classList.add("hide-near-footer");
         } else {
           whatsappFloat.classList.remove("hide-near-footer");
