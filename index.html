@@ -311,10 +311,12 @@
       border-radius:999px;
       border:1px solid transparent;
       font-weight:700;
-      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
       text-align:center;
       cursor:pointer;
       font:inherit;
+      width:fit-content;
+      margin-inline:auto;
     }
 
     .btn:hover{ transform:translateY(-2px); }
@@ -333,8 +335,52 @@
 
     .btn-gold{
       color:#fffaf4;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      box-shadow:0 14px 30px rgba(183,137,70,.24);
+      background:linear-gradient(135deg, #dcbc7a 0%, #c89c58 45%, #f0d79f 100%);
+      box-shadow:0 16px 34px rgba(183,137,70,.28), inset 0 1px 0 rgba(255,255,255,.38);
+      border-color:rgba(150,106,43,.22);
+    }
+
+    .btn-gold:hover{
+      box-shadow:0 18px 38px rgba(183,137,70,.32), inset 0 1px 0 rgba(255,255,255,.42);
+    }
+
+    .btn-premium-gold{
+      color:#fffaf3;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,0) 28%),
+        linear-gradient(135deg, #f2dca7 0%, #d9b168 34%, #bc853b 62%, #f4dfa8 100%);
+      border-color:rgba(139,95,34,.26);
+      box-shadow:
+        0 18px 38px rgba(151,104,43,.28),
+        inset 0 1px 0 rgba(255,255,255,.46),
+        inset 0 -1px 0 rgba(120,76,24,.14);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn-premium-gold::before{
+      content:"";
+      position:absolute;
+      inset:-140% auto -140% -38%;
+      width:38%;
+      transform:rotate(18deg);
+      background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 45%, rgba(255,255,255,.55) 50%, rgba(255,255,255,.12) 55%, rgba(255,255,255,0) 100%);
+      pointer-events:none;
+      animation:premiumShine 5.2s linear infinite;
+    }
+
+    .btn-premium-gold:hover{
+      box-shadow:
+        0 22px 42px rgba(151,104,43,.32),
+        inset 0 1px 0 rgba(255,255,255,.5),
+        inset 0 -1px 0 rgba(120,76,24,.16);
+    }
+
+    @keyframes premiumShine{
+      0%{ left:-42%; opacity:0; }
+      8%{ opacity:1; }
+      22%{ left:118%; opacity:.95; }
+      30%,100%{ left:118%; opacity:0; }
     }
 
     .hero{
@@ -503,6 +549,47 @@
       min-width:min(100%, 340px);
     }
 
+
+    .about-content{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .about-content .btn,
+    .premium-actions .btn,
+    .gallery-actions .btn,
+    .booking-cta .btn,
+    .contact-card > .btn,
+    .cta-box > .btn{
+      min-height:56px;
+      height:56px;
+      padding-inline:26px;
+      justify-content:center;
+      text-align:center;
+      margin-inline:auto;
+    }
+
+    .about-content .btn,
+    .premium-actions,
+    .gallery-actions,
+    .booking-cta,
+    .contact-card,
+    .cta-box{
+      text-align:center;
+    }
+
+    .booking-cta{
+      margin-top:24px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .contact-card > .btn,
+    .cta-box > .btn{
+      display:flex;
+      width:fit-content;
+    }
+
     .services-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
@@ -533,6 +620,7 @@
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:22px;
+      align-items:stretch;
     }
 
     .premium-card{
@@ -549,6 +637,9 @@
         inset 0 1px 0 rgba(255,255,255,.26);
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
+      display:flex;
+      flex-direction:column;
+      height:100%;
     }
 
     .premium-card::before{
@@ -671,6 +762,9 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
+      justify-content:center;
+      margin-top:auto;
+      padding-top:6px;
     }
 
     .work-grid{
@@ -823,6 +917,11 @@
       display:grid;
       gap:14px;
       margin:22px 0 28px;
+    }
+
+    .about-content,
+    .contact-card{
+      text-align:center;
     }
 
     .contact-item{
@@ -1388,7 +1487,7 @@
             </div>
 
             <div class="premium-actions">
-              <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20Novias%20Premium." target="_blank" rel="noopener noreferrer">Consultar Novias Premium</a>
+              <a class="btn btn-premium-gold" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20Novias%20Premium." target="_blank" rel="noopener noreferrer">Consultar Novias Premium</a>
             </div>
           </article>
 
@@ -1423,7 +1522,7 @@
             </div>
 
             <div class="premium-actions">
-              <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%2015%20Premium." target="_blank" rel="noopener noreferrer">Consultar 15 Premium</a>
+              <a class="btn btn-premium-gold" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%2015%20Premium." target="_blank" rel="noopener noreferrer">Consultar 15 Premium</a>
             </div>
           </article>
         </div>
@@ -1526,7 +1625,7 @@
             </div>
           </div>
 
-          <div style="margin-top:24px;">
+          <div class="booking-cta">
             <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
           </div>
         </div>
