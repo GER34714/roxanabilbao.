@@ -20,6 +20,14 @@
   <meta name="twitter:image" content="https://iili.io/qiL6yMl.png" />
 
   <style>
+    @font-face{
+      font-family:"Andrea Bellarosa";
+      src:url("./Andrea Bellarosa.ttf") format("truetype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+
     :root{
       --bg:#f7f0ea;
       --card:rgba(255,248,243,.80);
@@ -144,7 +152,7 @@
       top:0;
       z-index:1200;
       padding:14px 0;
-      transition:background .35s ease, box-shadow .35s ease, transform .35s ease;
+      transition:background .35s ease, box-shadow .35s ease;
     }
 
     .topbar.scrolled .topbar-inner{
@@ -165,6 +173,7 @@
       justify-content:space-between;
       gap:14px;
       transition:all .35s ease;
+      position:relative;
     }
 
     .brand{
@@ -206,27 +215,36 @@
       align-items:flex-start;
       justify-content:center;
       color:var(--text-strong);
-      font-size:1rem;
-      line-height:.96;
-      letter-spacing:.06em;
+      line-height:.82;
       white-space:normal;
       overflow:visible;
       text-overflow:clip;
+      font-family:"Andrea Bellarosa", cursive;
+      font-weight:400;
+      font-size:clamp(1.45rem, 2.4vw, 2.05rem);
+      letter-spacing:.01em;
+      padding-top:8px;
+      padding-right:10px;
     }
 
     .brand-copy strong span{
       display:block;
     }
 
-    .brand-copy span{
+    .brand-copy strong span + span{
+      margin-top:2px;
+    }
+
+    .brand-copy .brand-subtitle{
       display:block;
       font-size:.87rem;
       color:var(--muted);
       white-space:normal;
       overflow:visible;
       text-overflow:clip;
-      margin-top:4px;
+      margin-top:6px;
       line-height:1.15;
+      font-family:"Segoe UI", Arial, sans-serif;
     }
 
     .nav{
@@ -1003,11 +1021,12 @@
       }
 
       .brand-copy strong{
-        font-size:.95rem;
-        line-height:.93;
+        font-size:clamp(1.3rem, 4vw, 1.8rem);
+        line-height:.8;
+        padding-top:7px;
       }
 
-      .brand-copy span{
+      .brand-copy .brand-subtitle{
         font-size:.8rem;
       }
     }
@@ -1045,14 +1064,19 @@
       }
 
       .brand-copy strong{
-        font-size:.88rem;
-        line-height:.9;
-        letter-spacing:.05em;
+        font-size:1.18rem;
+        line-height:.8;
+        padding-top:7px;
+        padding-right:6px;
       }
 
-      .brand-copy span{
+      .brand-copy strong span + span{
+        margin-top:1px;
+      }
+
+      .brand-copy .brand-subtitle{
         font-size:.74rem;
-        margin-top:5px;
+        margin-top:6px;
         line-height:1.12;
       }
 
@@ -1174,10 +1198,10 @@
         </div>
         <div class="brand-copy">
           <strong>
-            <span>ROXANA</span>
-            <span>BILBAO</span>
+            <span>Roxana</span>
+            <span>Bilbao</span>
           </strong>
-          <span>Peluquería y estilismo</span>
+          <span class="brand-subtitle">Peluquería y estilismo</span>
         </div>
       </a>
 
