@@ -1,0 +1,1748 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROXANA BILBAO | Peluquería y Estilismo</title>
+  <meta name="description" content="Peluquería y estilismo profesional con servicios premium, color, cortes, nutrición capilar, peinados y reservas por WhatsApp." />
+  <meta name="theme-color" content="#e8d7cb" />
+
+  <meta property="og:title" content="ROXANA BILBAO | Peluquería y Estilismo" />
+  <meta property="og:description" content="Peluquería y estilismo profesional con servicios premium, atención personalizada y reservas por WhatsApp." />
+  <meta property="og:image" content="https://iili.io/qsHFUiX.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ROXANA BILBAO | Peluquería y Estilismo" />
+  <meta name="twitter:description" content="Peluquería y estilismo profesional con servicios premium y reservas por WhatsApp." />
+  <meta name="twitter:image" content="https://iili.io/qiL6yMl.png" />
+
+  <style>
+    @font-face{
+      font-family:"Andrea Bellarosa";
+      src:url("./Andrea Bellarosa.ttf") format("truetype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+
+    :root{
+      --bg:#f7f0ea;
+      --card:rgba(255,248,243,.80);
+      --card-strong:rgba(255,250,247,.92);
+      --solid-1:#f5ede7;
+      --solid-2:#f8f2ed;
+      --solid-3:#efe3da;
+      --text:#4f3c36;
+      --text-strong:#2f211d;
+      --muted:#6f5951;
+      --border:rgba(133,103,91,.14);
+      --accent:#c9a996;
+      --accent-2:#b98d77;
+      --gold:#c8a56a;
+      --gold-2:#b78946;
+      --shadow:0 14px 40px rgba(83,58,50,.10);
+      --max:1180px;
+    }
+
+    body.dark{
+      --bg:#221b19;
+      --card:rgba(47,37,34,.82);
+      --card-strong:rgba(56,44,40,.92);
+      --solid-1:#2d2422;
+      --solid-2:#342927;
+      --solid-3:#3a2d29;
+      --text:#f1e5dd;
+      --text-strong:#fff8f4;
+      --muted:#dfc9bf;
+      --border:rgba(255,237,227,.10);
+      --accent:#d1a48b;
+      --accent-2:#e1b69e;
+      --gold:#d8b57a;
+      --gold-2:#e7c894;
+      --shadow:0 14px 40px rgba(0,0,0,.28);
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:"Segoe UI", Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      overflow-x:hidden;
+      line-height:1.55;
+    }
+
+    img{ display:block; max-width:100%; }
+    a{ text-decoration:none; color:inherit; }
+    ul{ list-style:none; }
+
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin-inline:auto;
+    }
+
+    .section{
+      padding:92px 0;
+      position:relative;
+      z-index:1;
+    }
+
+    .bg-image{
+      background-image:
+        linear-gradient(rgba(247,240,234,.22), rgba(247,240,234,.22)),
+        url("https://iili.io/qip0l3v.jpg");
+      background-size:cover;
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+    }
+
+    body.dark .bg-image{
+      background-image:
+        linear-gradient(rgba(20,16,15,.30), rgba(20,16,15,.30)),
+        url("https://iili.io/qip0l3v.jpg");
+    }
+
+    .bg-solid-1{ background:var(--solid-1); }
+    .bg-solid-2{ background:var(--solid-2); }
+    .bg-solid-3{ background:var(--solid-3); }
+
+    .section-title{
+      max-width:760px;
+      margin:0 auto 18px;
+      text-align:center;
+      color:var(--text-strong);
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.08;
+      letter-spacing:-0.03em;
+    }
+
+    .section-subtitle{
+      max-width:780px;
+      margin:0 auto 46px;
+      text-align:center;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .glass{
+      background:var(--card);
+      border:1px solid var(--border);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:var(--shadow);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(36px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      padding:14px 0;
+      transition:background .35s ease, box-shadow .35s ease;
+    }
+
+    .topbar.scrolled .topbar-inner{
+      background:var(--card-strong);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .topbar.hide{ transform:translateY(-110%); }
+
+    .topbar-inner{
+      width:min(calc(100% - 24px), var(--max));
+      margin-inline:auto;
+      border-radius:999px;
+      padding:12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      transition:all .35s ease;
+      position:relative;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+      overflow:visible;
+      padding-right:8px;
+    }
+
+    .brand-logo{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#fff;
+      flex-shrink:0;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .brand-copy{
+      min-width:0;
+      overflow:visible;
+      padding-block:4px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .brand-copy strong{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      color:var(--text-strong);
+      white-space:normal;
+      overflow:visible;
+      text-overflow:clip;
+      font-family:"Andrea Bellarosa", cursive;
+      font-weight:400;
+      font-size:clamp(1.5rem, 2.5vw, 2.12rem);
+      letter-spacing:.012em;
+      line-height:1.02;
+      padding-top:4px;
+      padding-right:14px;
+    }
+
+    .brand-copy strong span{
+      display:block;
+    }
+
+    .brand-copy strong span + span{
+      margin-top:8px;
+    }
+
+    .brand-copy .brand-subtitle{
+      display:block;
+      font-size:.87rem;
+      color:var(--muted);
+      white-space:normal;
+      overflow:visible;
+      text-overflow:clip;
+      margin-top:8px;
+      line-height:1.15;
+      font-family:"Segoe UI", Arial, sans-serif;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .nav-links a{
+      padding:12px 14px;
+      border-radius:999px;
+      color:var(--text);
+      font-size:.95rem;
+      transition:background .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.35);
+      color:var(--text-strong);
+      transform:translateY(-1px);
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .theme-toggle,
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      background:var(--card-strong);
+      border:1px solid var(--border);
+      color:var(--text-strong);
+      box-shadow:var(--shadow);
+    }
+
+    .menu-toggle{ display:none; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 22px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      text-align:center;
+      cursor:pointer;
+      font:inherit;
+      width:fit-content;
+      margin-inline:auto;
+    }
+
+    .btn:hover{ transform:translateY(-2px); }
+
+    .btn-primary{
+      color:#fff9f6;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 14px 30px rgba(185,141,119,.28);
+    }
+
+    .btn-secondary{
+      background:var(--card-strong);
+      border-color:var(--border);
+      color:var(--text-strong);
+    }
+
+    .btn-gold{
+      color:#fffaf4;
+      background:linear-gradient(135deg, #dcbc7a 0%, #c89c58 45%, #f0d79f 100%);
+      box-shadow:0 16px 34px rgba(183,137,70,.28), inset 0 1px 0 rgba(255,255,255,.38);
+      border-color:rgba(150,106,43,.22);
+    }
+
+    .btn-gold:hover{
+      box-shadow:0 18px 38px rgba(183,137,70,.32), inset 0 1px 0 rgba(255,255,255,.42);
+    }
+
+    .btn-premium-gold{
+      color:#fffaf3;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,0) 28%),
+        linear-gradient(135deg, #f2dca7 0%, #d9b168 34%, #bc853b 62%, #f4dfa8 100%);
+      border-color:rgba(139,95,34,.26);
+      box-shadow:
+        0 18px 38px rgba(151,104,43,.28),
+        inset 0 1px 0 rgba(255,255,255,.46),
+        inset 0 -1px 0 rgba(120,76,24,.14);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn-premium-gold::before{
+      content:"";
+      position:absolute;
+      inset:-140% auto -140% -38%;
+      width:38%;
+      transform:rotate(18deg);
+      background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 45%, rgba(255,255,255,.55) 50%, rgba(255,255,255,.12) 55%, rgba(255,255,255,0) 100%);
+      pointer-events:none;
+      animation:premiumShine 5.2s linear infinite;
+    }
+
+    .btn-premium-gold:hover{
+      box-shadow:
+        0 22px 42px rgba(151,104,43,.32),
+        inset 0 1px 0 rgba(255,255,255,.5),
+        inset 0 -1px 0 rgba(120,76,24,.16);
+    }
+
+    @keyframes premiumShine{
+      0%{ left:-42%; opacity:0; }
+      8%{ opacity:1; }
+      22%{ left:118%; opacity:.95; }
+      30%,100%{ left:118%; opacity:0; }
+    }
+
+    .hero{
+      padding:58px 0 72px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      align-items:center;
+      gap:34px;
+    }
+
+    .hero-card{
+      border-radius:34px;
+      padding:38px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.46);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      color:var(--text-strong);
+      font-size:clamp(2.6rem, 5vw, 5rem);
+      line-height:.98;
+      letter-spacing:-0.05em;
+      margin-bottom:18px;
+      max-width:10ch;
+    }
+
+    .hero p{
+      max-width:600px;
+      color:var(--muted);
+      font-size:1.05rem;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .hero-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .hero-chips span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.42);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:.92rem;
+    }
+
+    .hero-visual{
+      min-height:620px;
+      height:620px;
+      border-radius:34px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.25);
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-visual img{
+      width:auto;
+      max-width:100%;
+      height:100%;
+      max-height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:24px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .about-media{
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      min-height:560px;
+      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.22);
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .about-media img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+    }
+
+    .about-content{
+      border-radius:30px;
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .about-content h2{
+      color:var(--text-strong);
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.05;
+      margin-bottom:16px;
+    }
+
+    .about-content p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .about-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin:24px 0;
+    }
+
+    .about-list li{
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.38);
+      border:1px solid var(--border);
+      color:var(--text);
+      min-height:74px;
+      display:flex;
+      align-items:center;
+    }
+
+    .about-content .btn{
+      align-self:center;
+      text-align:center;
+      min-width:min(100%, 340px);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .service-card{
+      border-radius:24px;
+      padding:20px 18px;
+      min-height:unset;
+      display:block;
+    }
+
+    .service-card h3{
+      color:var(--text-strong);
+      font-size:1.05rem;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.48;
+    }
+
+    .premium-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:22px;
+    }
+
+    .premium-card{
+      position:relative;
+      border-radius:32px;
+      padding:22px;
+      overflow:hidden;
+      border:1px solid rgba(201,169,150,.26);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.10)),
+        rgba(255,248,243,.42);
+      box-shadow:
+        0 18px 44px rgba(83,58,50,.12),
+        inset 0 1px 0 rgba(255,255,255,.26);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(226,194,150,.18), transparent 38%, transparent 62%, rgba(226,194,150,.10));
+      pointer-events:none;
+    }
+
+    .premium-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.34);
+      border:1px solid rgba(201,169,150,.28);
+      color:var(--text-strong);
+      font-size:.88rem;
+    }
+
+    .premium-glow{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      color:#9e755c;
+      background:linear-gradient(135deg, rgba(255,240,224,.8), rgba(223,188,151,.38));
+      border:1px solid rgba(210,177,139,.36);
+      box-shadow:0 12px 26px rgba(201,169,150,.20);
+      flex-shrink:0;
+    }
+
+    .premium-card h3{
+      color:var(--text-strong);
+      font-size:clamp(1.45rem, 3vw, 2rem);
+      line-height:1.05;
+      margin-bottom:10px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-card > p{
+      color:var(--muted);
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .premium-media{
+      position:relative;
+      z-index:1;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(201,169,150,.22);
+      background:rgba(255,255,255,.18);
+      margin:0 auto 18px;
+      box-shadow:0 14px 26px rgba(83,58,50,.10);
+      max-width:340px;
+      padding:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .premium-media video{
+      width:100%;
+      height:auto;
+      max-height:420px;
+      display:block;
+      object-fit:contain;
+      background:#000;
+      border-radius:18px;
+    }
+
+    .premium-includes{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-bottom:20px;
+    }
+
+    .premium-includes li{
+      padding:14px 14px 14px 16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.28);
+      border:1px solid rgba(201,169,150,.18);
+      color:var(--text);
+      font-size:.95rem;
+    }
+
+    .premium-note{
+      position:relative;
+      z-index:1;
+      border-radius:20px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.24);
+      border:1px solid rgba(201,169,150,.18);
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .premium-actions{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+    }
+
+    .work-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-bottom:24px;
+    }
+
+    .work-card{
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:var(--card-strong);
+    }
+
+    .work-media{
+      width:100%;
+      height:520px;
+      min-height:520px;
+      max-height:520px;
+      overflow:hidden;
+      background:rgba(255,255,255,.24);
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .work-media img{
+      width:auto;
+      max-width:100%;
+      height:100%;
+      max-height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:18px;
+    }
+
+    .work-body{
+      padding:24px;
+    }
+
+    .work-body h3{
+      color:var(--text-strong);
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .work-body p{
+      color:var(--muted);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .gallery-card{
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:var(--card-strong);
+      padding:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      aspect-ratio:4/5;
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:16px;
+    }
+
+    .gallery-card.is-hidden{
+      display:none;
+    }
+
+    .gallery-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:28px;
+    }
+
+    .gallery-actions.hidden{
+      display:none;
+    }
+
+    .booking-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .booking-card,
+    .contact-card{
+      border-radius:30px;
+      padding:32px;
+    }
+
+    .steps{
+      display:grid;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .step{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:22px;
+      background:rgba(255,255,255,.36);
+      border:1px solid var(--border);
+    }
+
+    .step-number{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      flex-shrink:0;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 10px 24px rgba(185,141,119,.22);
+    }
+
+    .step h4{
+      color:var(--text-strong);
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin:22px 0 28px;
+    }
+
+    .about-content,
+    .contact-card{
+      text-align:center;
+    }
+
+    .contact-item{
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.34);
+      border:1px solid var(--border);
+    }
+
+    .contact-item strong{
+      display:block;
+      color:var(--text-strong);
+      margin-bottom:4px;
+    }
+
+    .contact-item span{
+      color:var(--muted);
+      display:block;
+    }
+
+    .cta-box{
+      border-radius:34px;
+      padding:38px;
+      text-align:center;
+    }
+
+    .cta-box h2{
+      color:var(--text-strong);
+      font-size:clamp(2rem,4vw,3.2rem);
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .cta-box p{
+      color:var(--muted);
+      max-width:700px;
+      margin:0 auto 26px;
+    }
+
+    footer{
+      position:relative;
+      z-index:3;
+      padding:28px 0 94px;
+      background:var(--solid-1);
+    }
+
+    .footer-card{
+      border-radius:28px;
+      padding:24px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .footer-card p{
+      color:var(--muted);
+    }
+
+    .footer-card a{
+      color:var(--accent-2);
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      z-index:1050;
+      background:rgba(255,255,255,.95);
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
+      border:1px solid rgba(0,0,0,.06);
+      transition:transform .25s ease, opacity .25s ease, bottom .25s ease;
+    }
+
+    .whatsapp-float img{
+      width:40px;
+      height:40px;
+      object-fit:contain;
+    }
+
+    .whatsapp-float.hide-near-footer{
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(10px);
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .about-grid,
+      .booking-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual,
+      .about-media{
+        min-height:520px;
+      }
+
+      .hero-visual{ height:520px; }
+
+      .services-grid,
+      .gallery-grid,
+      .premium-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .premium-media{ max-width:320px; }
+
+      .work-media{
+        height:460px;
+        min-height:460px;
+        max-height:460px;
+      }
+    }
+
+    @media (max-width: 820px){
+      .bg-image{
+        background-attachment:scroll;
+        background-position:center top;
+      }
+
+      .topbar-inner{
+        border-radius:24px;
+        align-items:flex-start;
+      }
+
+      .menu-toggle{ display:grid; }
+
+      .nav-links{
+        position:absolute;
+        top:100%;
+        left:12px;
+        right:12px;
+        margin-top:10px;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border-radius:24px;
+        background:var(--card-strong);
+        border:1px solid var(--border);
+        box-shadow:var(--shadow);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-10px);
+        transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
+      }
+
+      .nav-links.open{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+      }
+
+      .nav-links a{
+        width:100%;
+        border-radius:18px;
+      }
+
+      .services-grid,
+      .work-grid,
+      .gallery-grid,
+      .about-list,
+      .premium-grid,
+      .premium-includes{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:30px;
+      }
+
+      .hero-card,
+      .about-content,
+      .booking-card,
+      .contact-card,
+      .cta-box{
+        padding:28px 22px;
+      }
+
+      .hero h1{ max-width:100%; }
+
+      .hero-visual{
+        min-height:460px;
+        height:460px;
+      }
+
+      .about-media{ min-height:420px; }
+      .section{ padding:74px 0; }
+
+      .premium-media{ max-width:none; }
+      .premium-media video{ max-height:460px; }
+
+      .work-media{
+        height:520px;
+        min-height:520px;
+        max-height:520px;
+      }
+
+      .brand{
+        align-items:flex-start;
+      }
+
+      .brand-copy strong{
+        font-size:clamp(1.32rem, 4vw, 1.85rem);
+        line-height:1.02;
+        padding-top:4px;
+        padding-right:8px;
+      }
+
+      .brand-copy strong span + span{
+        margin-top:7px;
+      }
+
+      .brand-copy .brand-subtitle{
+        font-size:.8rem;
+        margin-top:7px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .bg-image{
+        background-size:contain;
+        background-position:center top;
+        background-repeat:repeat-y;
+      }
+
+      .container{
+        width:min(calc(100% - 22px), var(--max));
+      }
+
+      .topbar{ padding:10px 0; }
+
+      .topbar-inner{
+        width:min(calc(100% - 18px), var(--max));
+        padding:10px 12px;
+      }
+
+      .brand{
+        gap:10px;
+        padding-right:6px;
+      }
+
+      .brand-logo{
+        width:48px;
+        height:48px;
+      }
+
+      .brand-copy{
+        padding-block:4px;
+      }
+
+      .brand-copy strong{
+        font-size:1.2rem;
+        line-height:1.04;
+        padding-top:3px;
+        padding-right:4px;
+      }
+
+      .brand-copy strong span + span{
+        margin-top:6px;
+      }
+
+      .brand-copy .brand-subtitle{
+        font-size:.74rem;
+        margin-top:6px;
+        line-height:1.12;
+      }
+
+      .theme-toggle,
+      .menu-toggle{
+        width:44px;
+        height:44px;
+      }
+
+      .hero-card{
+        padding:24px 18px;
+        border-radius:28px;
+      }
+
+      .hero-visual{
+        min-height:390px;
+        height:390px;
+        border-radius:28px;
+        padding:12px;
+      }
+
+      .hero-visual img{ border-radius:18px; }
+
+      .about-media{
+        min-height:360px;
+        border-radius:26px;
+        padding:12px;
+      }
+
+      .about-media img{ border-radius:18px; }
+
+      .about-content,
+      .booking-card,
+      .contact-card,
+      .cta-box{
+        padding:24px 18px;
+        border-radius:26px;
+      }
+
+      .service-card{
+        padding:16px 15px;
+        border-radius:20px;
+      }
+
+      .service-card h3{
+        font-size:1rem;
+        margin-bottom:6px;
+      }
+
+      .service-card p{
+        font-size:.9rem;
+        line-height:1.42;
+      }
+
+      .premium-card{
+        padding:18px;
+        border-radius:26px;
+      }
+
+      .premium-media{
+        border-radius:20px;
+        padding:10px;
+      }
+
+      .premium-media video{
+        max-height:430px;
+        border-radius:14px;
+      }
+
+      .work-card,
+      .gallery-card{
+        border-radius:24px;
+      }
+
+      .work-media,
+      .gallery-card{
+        padding:10px;
+      }
+
+      .work-media{
+        height:420px;
+        min-height:420px;
+        max-height:420px;
+      }
+
+      .work-media img,
+      .gallery-card img{
+        border-radius:14px;
+      }
+
+      .work-body{
+        padding:20px 18px;
+      }
+
+      .step{ padding:16px; }
+
+      footer{ padding-bottom:84px; }
+
+      .whatsapp-float{
+        width:72px;
+        height:72px;
+        right:14px;
+        bottom:26px;
+      }
+
+      .whatsapp-float img{
+        width:42px;
+        height:42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner glass">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo">
+          <img src="https://iili.io/qsHFUiX.png" alt="Logo ROXANA BILBAO">
+        </div>
+        <div class="brand-copy">
+          <strong>
+            <span>Roxana</span>
+            <span>Bilbao</span>
+          </strong>
+          <span class="brand-subtitle">Peluquería y estilismo</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <div class="nav-links" id="mobileMenu">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre">Sobre mí</a>
+          <a href="trayectoria.html">Trayectoria</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#trabajos">Trabajos</a>
+          <a href="#premium">Premium</a>
+          <a href="#galeria">Galería</a>
+          <a href="#reservas">Reservas</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="toolbar">
+          <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3V5M12 19V21M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M3 12H5M19 12H21M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93M16 12A4 4 0 1 1 8 12A4 4 0 0 1 16 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero bg-image" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-card glass reveal">
+          <span class="eyebrow">Peluquería profesional, estilo y cuidado capilar</span>
+          <h1>Tu imagen en manos de una profesional con estilo, experiencia y dedicación</h1>
+          <p>
+            Un espacio pensado para realzar tu imagen con servicios de peluquería, coloración, nutrición capilar y peinados, desde una atención cercana, profesional y enfocada en que cada detalle acompañe tu estilo.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+          </div>
+
+          <div class="hero-chips">
+            <span>Atención personalizada</span>
+            <span>Experiencia y criterio profesional</span>
+            <span>Turnos por WhatsApp</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img src="https://iili.io/qZdIBLJ.md.png" alt="Hero Roxana Bilbao">
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-1" id="sobre">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="https://iili.io/qiL6yMl.png" alt="ROXANA BILBAO">
+        </div>
+
+        <div class="about-content glass reveal">
+          <h2>Sobre Roxana</h2>
+          <p>
+            Roxana desarrolla cada servicio con una mirada profesional construida a partir de años de trabajo, cuidando no solo el resultado final sino también el proceso, la salud del cabello y la experiencia de cada clienta.
+          </p>
+          <p>
+            Su propuesta combina técnica, criterio, estilo y cercanía para lograr resultados armónicos, personalizados y alineados con lo que cada persona quiere proyectar.
+          </p>
+
+          <ul class="about-list">
+            <li>Atención dedicada y profesional en cada detalle</li>
+            <li>Asesoramiento según tu estilo, facciones y objetivo</li>
+            <li>Servicios diseñados para realzar tu imagen</li>
+            <li>Resultados prolijos, femeninos y naturales</li>
+          </ul>
+
+          <a class="btn btn-gold" href="trayectoria.html">Conocé su trayectoria profesional</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-2" id="servicios">
+      <div class="container">
+        <h2 class="section-title reveal">Servicios premium pensados para realzar tu imagen</h2>
+        <p class="section-subtitle reveal">
+          Una propuesta cuidada en cada detalle, pensada para quienes valoran atención personalizada, criterio profesional y resultados acordes a su estilo.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card glass reveal">
+            <h3>Cortes y cambios de look con criterio profesional</h3>
+            <p>Cortes femeninos y asesoramiento personalizado para encontrar un estilo que acompañe tu imagen con armonía y presencia.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <h3>Coloración, mechas e iluminación premium</h3>
+            <p>Trabajos de color, iluminaciones y mechas realizados con una mirada estética que respeta tu esencia y el cuidado del cabello.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <h3>Nutrición y recuperación capilar</h3>
+            <p>Tratamientos orientados al cuidado profundo, la reparación y la mejora visible de la textura, suavidad y brillo.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <h3>Alisados y terminación prolija</h3>
+            <p>Opciones pensadas para facilitar el peinado diario y lograr una terminación prolija, elegante y cuidada.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <h3>Peinados y brushing para lucir impecable</h3>
+            <p>Terminaciones suaves, elegantes y prolijas para eventos, ocasiones especiales o simplemente para renovar tu imagen.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <h3>Asesoramiento profesional personalizado</h3>
+            <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, tu colorimetría y el estilo que querés transmitir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-3" id="premium">
+      <div class="container">
+        <h2 class="section-title reveal">Experiencias premium para momentos realmente inolvidables</h2>
+        <p class="section-subtitle reveal">
+          Dos propuestas exclusivas pensadas para vivir la previa con calma, emoción y detalles que elevan el servicio a una experiencia mucho más especial.
+        </p>
+
+        <div class="premium-grid">
+          <article class="premium-card reveal">
+            <div class="premium-head">
+              <span class="premium-tag">Novias Premium</span>
+              <div class="premium-glow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4C13.2 6.6 15.4 8.8 18 10C15.4 11.2 13.2 13.4 12 16C10.8 13.4 8.6 11.2 6 10C8.6 8.8 10.8 6.6 12 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 4V8M21 6H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+
+            <h3>Una previa íntima, cuidada y verdaderamente especial</h3>
+            <p>
+              Un servicio pensado para que la novia viva uno de los momentos más importantes de su vida con atención exclusiva, calma y una ambientación cuidada que acompañe la emoción de ese día.
+            </p>
+
+            <div class="premium-media">
+              <video src="https://fhxcumwhgtfirznnznjx.supabase.co/storage/v1/object/public/video%20ciborg%20347/roxana%202.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <ul class="premium-includes">
+              <li>Asesoramiento previo de peinado</li>
+              <li>Espacio privado y personalizado</li>
+              <li>Batas y pantuflas para la experiencia</li>
+              <li>Bebidas, snacks, música y aromas</li>
+              <li>Atención delicada y acompañamiento cercano</li>
+              <li>Ideal para novia sola o con acompañantes</li>
+            </ul>
+
+            <div class="premium-note">
+              Más que prepararte, la propuesta es que disfrutes la previa, te sientas segura, acompañada y radiante desde el primer momento.
+            </div>
+
+            <div class="premium-actions">
+              <a class="btn btn-premium-gold" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20Novias%20Premium." target="_blank" rel="noopener noreferrer">Consultar Novias Premium</a>
+            </div>
+          </article>
+
+          <article class="premium-card reveal">
+            <div class="premium-head">
+              <span class="premium-tag">15 Premium</span>
+              <div class="premium-glow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.2 8.1L20 9L15.8 13.1L16.8 19L12 16.3L7.2 19L8.2 13.1L4 9L9.8 8.1L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+
+            <h3>Una experiencia especial para disfrutar y atesorar antes del gran momento</h3>
+            <p>
+              Pensado para quinceañeras que quieren vivir su previa como un recuerdo único, compartiendo ese instante con emoción, amor y una ambientación cuidada que acompañe la ocasión.
+            </p>
+
+            <div class="premium-media">
+              <video src="https://fhxcumwhgtfirznnznjx.supabase.co/storage/v1/object/public/video%20ciborg%20347/roxana%201%20.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <ul class="premium-includes">
+              <li>Asesoramiento previo del peinado</li>
+              <li>Espacio íntimo y personalizado</li>
+              <li>Experiencia para compartir con personas importantes</li>
+              <li>Ambientación cuidada y detalles premium</li>
+              <li>Peinado pensado para acompañar el estilo del evento</li>
+              <li>Una previa emocional, prolija y especial</li>
+            </ul>
+
+            <div class="premium-note">
+              No es solo peinar. Es acompañar un instante inolvidable para que esa previa también quede guardada como parte del recuerdo.
+            </div>
+
+            <div class="premium-actions">
+              <a class="btn btn-premium-gold" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%2015%20Premium." target="_blank" rel="noopener noreferrer">Consultar 15 Premium</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-3" id="trabajos">
+      <div class="container">
+        <h2 class="section-title reveal">Trabajo real, dedicación y criterio profesional</h2>
+        <p class="section-subtitle reveal">
+          Imágenes pensadas para mostrar parte del trabajo real de Roxana: dedicación, prolijidad y una manera profesional de acompañar cada servicio.
+        </p>
+
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <div class="work-media">
+              <img src="https://iili.io/qZde3vV.md.png" alt="Roxana trabajando en un servicio de peluquería">
+            </div>
+            <div class="work-body">
+              <h3>Atención cuidada en cada detalle</h3>
+              <p>Un trabajo delicado y profesional, enfocado en lograr resultados armónicos, cuidados y con una terminación prolija.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal">
+            <div class="work-media">
+              <img src="https://iili.io/qiZ8tZQ.png" alt="Roxana realizando un trabajo de estilismo">
+            </div>
+            <div class="work-body">
+              <h3>Experiencia personalizada</h3>
+              <p>Cada servicio se adapta a la necesidad de la clienta, buscando una experiencia cómoda y un resultado que acompañe su imagen.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-1" id="galeria">
+      <div class="container">
+        <h2 class="section-title reveal">Galería de resultados</h2>
+        <p class="section-subtitle reveal">
+          Una selección de trabajos para mostrar estilos, terminaciones y resultados reales, manteniendo las imágenes limpias y bien encuadradas.
+        </p>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <article class="gallery-card reveal"><img src="https://iili.io/qiZlsFS.png" alt="Resultado 1"></article>
+          <article class="gallery-card reveal"><img src="https://iili.io/qiZ0TlI.png" alt="Resultado 2"></article>
+          <article class="gallery-card reveal"><img src="https://iili.io/qiZayOb.png" alt="Resultado 3"></article>
+
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcdWQ.png" alt="Resultado 4"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcFqB.png" alt="Resultado 5"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0cxf.png" alt="Resultado 6"></article>
+
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0RHX.png" alt="Resultado 7"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZ0Nxj.png" alt="Resultado 8"></article>
+          <article class="gallery-card reveal is-hidden"><img src="https://iili.io/qiZcPYF.png" alt="Resultado 9"></article>
+        </div>
+
+        <div class="gallery-actions reveal" id="galleryMoreWrap">
+          <button class="btn btn-secondary" id="galleryMoreBtn" type="button">Ver más</button>
+        </div>
+
+        <div class="gallery-actions hidden" id="galleryInstagramWrap">
+          <a class="btn btn-primary" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Ver en Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-2" id="reservas">
+      <div class="container booking-wrap">
+        <div class="booking-card glass reveal">
+          <h2 style="color:var(--text-strong); font-size:clamp(2rem,4vw,2.8rem); line-height:1.05; margin-bottom:14px;">Reservá tu turno de forma simple y directa</h2>
+          <p style="color:var(--muted);">
+            Una forma simple de consultar disponibilidad, elegir el servicio indicado y coordinar día y horario de manera directa por WhatsApp.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h4>Elegís el servicio</h4>
+                <p>Nos contás qué querés hacerte o te asesoramos según tu necesidad.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <h4>Escribís por WhatsApp</h4>
+                <p>Enviás tu consulta y coordinás de forma rápida y directa.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <h4>Confirmás tu turno</h4>
+                <p>Definimos día, horario y detalles para que tu visita sea cómoda y organizada.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-card glass reveal" id="contacto">
+          <h2 style="color:var(--text-strong); font-size:clamp(1.8rem,3.5vw,2.4rem); line-height:1.08; margin-bottom:12px;">Contacto y consultas</h2>
+          <p style="color:var(--muted);">
+            Si querés reservar, consultar por un servicio o recibir más información, podés comunicarte de forma directa.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>WhatsApp</strong>
+              <span>+54 381 463-0700</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Instagram</strong>
+              <span>@roxana.stylist</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Ubicación</strong>
+              <span>9 de Julio 436, Caleta Olivia</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Horarios</strong>
+              <span>Turnos y horarios a coordinar por WhatsApp</span>
+            </div>
+          </div>
+
+          <a class="btn btn-secondary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20mas%20informacion%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">Escribirme ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-solid-3">
+      <div class="container">
+        <div class="cta-box glass reveal">
+          <h2>Renová tu imagen con una atención profesional, cercana y cuidada</h2>
+          <p>
+            Una propuesta pensada para que te sientas cómoda, acompañada y segura en cada cambio, con resultados prolijos, una experiencia cuidada y contacto simple por WhatsApp.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-card glass">
+        <p>ROXANA BILBAO | Peluquería y estilismo con reservas por WhatsApp.</p>
+        <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/543814630700?text=Hola%20Roxana,%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("roxana-theme");
+
+    if(savedTheme === "dark"){ body.classList.add("dark"); }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      localStorage.setItem("roxana-theme", body.classList.contains("dark") ? "dark" : "light");
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const galleryMoreBtn = document.getElementById("galleryMoreBtn");
+    const galleryMoreWrap = document.getElementById("galleryMoreWrap");
+    const galleryInstagramWrap = document.getElementById("galleryInstagramWrap");
+    const hiddenGalleryItems = Array.from(document.querySelectorAll(".gallery-card.is-hidden"));
+    let galleryStep = 0;
+
+    galleryMoreBtn.addEventListener("click", () => {
+      const start = galleryStep * 3;
+      const itemsToShow = hiddenGalleryItems.slice(start, start + 3);
+
+      itemsToShow.forEach(item => {
+        item.classList.remove("is-hidden");
+        revealObserver.observe(item);
+      });
+
+      galleryStep += 1;
+
+      if(galleryStep * 3 >= hiddenGalleryItems.length){
+        galleryMoreWrap.classList.add("hidden");
+        galleryInstagramWrap.classList.remove("hidden");
+      }
+    });
+
+    const topbar = document.getElementById("topbar");
+    let lastScroll = window.scrollY;
+
+    const handleHeader = () => {
+      const current = window.scrollY;
+
+      if(current > 12){ topbar.classList.add("scrolled"); }
+      else { topbar.classList.remove("scrolled"); }
+
+      topbar.classList.remove("hide");
+
+      if(window.innerWidth <= 820 && current > lastScroll && current > 120){
+        topbar.classList.add("hide");
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+
+      lastScroll = current;
+    };
+
+    window.addEventListener("scroll", handleHeader);
+
+    const footer = document.getElementById("footer");
+    const whatsappFloat = document.getElementById("whatsappFloat");
+
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(window.innerWidth <= 820 && entry.isIntersecting){
+          whatsappFloat.classList.add("hide-near-footer");
+        } else {
+          whatsappFloat.classList.remove("hide-near-footer");
+        }
+      });
+    }, {
+      threshold: 0.24,
+      rootMargin: "0px 0px -80px 0px"
+    });
+
+    footerObserver.observe(footer);
+  </script>
+</body>
+</html>
