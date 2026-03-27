@@ -1755,16 +1755,19 @@
 
     const handleHeader = () => {
       const current = window.scrollY;
+      const scrollingDown = current > lastScroll;
 
       if(current > 12){ topbar.classList.add("scrolled"); }
       else { topbar.classList.remove("scrolled"); }
 
-      topbar.classList.remove("hide");
-
-      if(window.innerWidth <= 820 && current > lastScroll && current > 120){
+      if(scrollingDown && current > 120){
         topbar.classList.add("hide");
-        mobileMenu.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
+        if(window.innerWidth <= 820){
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      } else {
+        topbar.classList.remove("hide");
       }
 
       lastScroll = current;
