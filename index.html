@@ -435,7 +435,7 @@
       display:grid;
       grid-template-columns:.92fr 1.08fr;
       gap:28px;
-      align-items:center;
+      align-items:stretch;
     }
 
     .about-media{
@@ -462,6 +462,9 @@
     .about-content{
       border-radius:30px;
       padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
     .about-content h2{
@@ -492,6 +495,12 @@
       min-height:74px;
       display:flex;
       align-items:center;
+    }
+
+    .about-content .btn{
+      align-self:center;
+      text-align:center;
+      min-width:min(100%, 340px);
     }
 
     .services-grid{
