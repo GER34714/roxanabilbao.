@@ -206,7 +206,10 @@
     .brand-copy{
       min-width:0;
       overflow:visible;
-      padding-block:2px;
+      padding-block:4px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
     .brand-copy strong{
@@ -215,16 +218,16 @@
       align-items:flex-start;
       justify-content:center;
       color:var(--text-strong);
-      line-height:.82;
       white-space:normal;
       overflow:visible;
       text-overflow:clip;
       font-family:"Andrea Bellarosa", cursive;
       font-weight:400;
-      font-size:clamp(1.45rem, 2.4vw, 2.05rem);
-      letter-spacing:.01em;
-      padding-top:8px;
-      padding-right:10px;
+      font-size:clamp(1.5rem, 2.5vw, 2.12rem);
+      letter-spacing:.012em;
+      line-height:1.02;
+      padding-top:4px;
+      padding-right:14px;
     }
 
     .brand-copy strong span{
@@ -232,7 +235,7 @@
     }
 
     .brand-copy strong span + span{
-      margin-top:2px;
+      margin-top:8px;
     }
 
     .brand-copy .brand-subtitle{
@@ -242,7 +245,7 @@
       white-space:normal;
       overflow:visible;
       text-overflow:clip;
-      margin-top:6px;
+      margin-top:8px;
       line-height:1.15;
       font-family:"Segoe UI", Arial, sans-serif;
     }
@@ -1021,13 +1024,19 @@
       }
 
       .brand-copy strong{
-        font-size:clamp(1.3rem, 4vw, 1.8rem);
-        line-height:.8;
-        padding-top:7px;
+        font-size:clamp(1.32rem, 4vw, 1.85rem);
+        line-height:1.02;
+        padding-top:4px;
+        padding-right:8px;
+      }
+
+      .brand-copy strong span + span{
+        margin-top:7px;
       }
 
       .brand-copy .brand-subtitle{
         font-size:.8rem;
+        margin-top:7px;
       }
     }
 
@@ -1060,18 +1069,18 @@
       }
 
       .brand-copy{
-        padding-block:3px;
+        padding-block:4px;
       }
 
       .brand-copy strong{
-        font-size:1.18rem;
-        line-height:.8;
-        padding-top:7px;
-        padding-right:6px;
+        font-size:1.2rem;
+        line-height:1.04;
+        padding-top:3px;
+        padding-right:4px;
       }
 
       .brand-copy strong span + span{
-        margin-top:1px;
+        margin-top:6px;
       }
 
       .brand-copy .brand-subtitle{
