@@ -605,19 +605,44 @@
     .services-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:16px;
+      gap:14px;
+    }
+
+    #servicios .section-subtitle{
+      margin-bottom:32px;
     }
 
     .service-card{
       border-radius:24px;
-      padding:20px 18px;
+      padding:18px 18px 16px;
       min-height:unset;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+
+    .service-card-icon{
+      width:58px;
+      height:58px;
+      margin:0 auto 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+
+    .service-card-icon img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
       display:block;
+      filter:drop-shadow(0 8px 14px rgba(0,0,0,.10));
     }
 
     .service-card h3{
       color:var(--text-strong);
-      font-size:1.05rem;
+      font-size:1.03rem;
       line-height:1.2;
       margin-bottom:8px;
     }
@@ -625,7 +650,55 @@
     .service-card p{
       color:var(--muted);
       font-size:.94rem;
-      line-height:1.48;
+      line-height:1.46;
+    }
+
+    .premium-intro{
+      max-width:900px;
+      margin:0 auto 24px;
+      border-radius:30px;
+      padding:16px;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:18px;
+      align-items:center;
+    }
+
+    .premium-intro-media{
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.20);
+      padding:10px;
+      min-height:250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .premium-intro-media img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      border-radius:18px;
+    }
+
+    .premium-intro-copy{
+      text-align:left;
+      padding:4px 6px;
+    }
+
+    .premium-intro-copy h3{
+      color:var(--text-strong);
+      font-size:clamp(1.35rem, 2.7vw, 2rem);
+      line-height:1.08;
+      margin-bottom:10px;
+    }
+
+    .premium-intro-copy p{
+      color:var(--muted);
+      margin-bottom:0;
     }
 
     .premium-grid{
@@ -1051,6 +1124,10 @@
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
 
+      .premium-intro{
+        grid-template-columns:1fr;
+      }
+
       .premium-media{ max-width:320px; }
 
       .work-media{
@@ -1270,6 +1347,12 @@
         border-radius:20px;
       }
 
+      .service-card-icon{
+        width:52px;
+        height:52px;
+        margin-bottom:10px;
+      }
+
       .service-card h3{
         font-size:1rem;
         margin-bottom:6px;
@@ -1446,31 +1529,37 @@
 
         <div class="services-grid">
           <article class="service-card glass reveal">
+            <div class="service-card-icon"><img src="https://iili.io/qmGuIus.png" alt="Icono de cortes"></div>
             <h3>Cortes y cambios de look con criterio profesional</h3>
             <p>Cortes femeninos y asesoramiento personalizado para encontrar un estilo que acompañe tu imagen con armonía y presencia.</p>
           </article>
 
           <article class="service-card glass reveal">
-            <h3>Coloración, mechas e iluminación premium</h3>
-            <p>Trabajos de color, iluminaciones y mechas realizados con una mirada estética que respeta tu esencia y el cuidado del cabello.</p>
+            <div class="service-card-icon"><img src="https://iili.io/qmMomAJ.png" alt="Icono de coloración y mechas"></div>
+            <h3>Coloración, mechas, balayage y contouring premium</h3>
+            <p>Trabajos de color, iluminaciones, balayage, contouring y mechas realizados con una mirada estética que respeta tu esencia y el cuidado del cabello.</p>
           </article>
 
           <article class="service-card glass reveal">
+            <div class="service-card-icon"><img src="https://iili.io/qmMszf1.png" alt="Icono de restauración capilar"></div>
             <h3>Nutrición y recuperación capilar</h3>
             <p>Tratamientos orientados al cuidado profundo, la reparación y la mejora visible de la textura, suavidad y brillo.</p>
           </article>
 
           <article class="service-card glass reveal">
+            <div class="service-card-icon"><img src="https://iili.io/qmGWKoN.png" alt="Icono de lavado y secado"></div>
             <h3>Lavado, secado y terminación profesional</h3>
             <p>Un servicio pensado para dejar el cabello prolijo, cuidado y con una terminación estética acorde a tu estilo y ocasión.</p>
           </article>
 
           <article class="service-card glass reveal">
+            <div class="service-card-icon"><img src="https://iili.io/qmMhMqN.png" alt="Icono de peinados"></div>
             <h3>Peinados y brushing para lucir impecable</h3>
             <p>Terminaciones suaves, elegantes y prolijas para eventos, ocasiones especiales o simplemente para renovar tu imagen.</p>
           </article>
 
           <article class="service-card glass reveal">
+            <div class="service-card-icon"><img src="https://iili.io/qmVKZdJ.png" alt="Icono de asesoramiento personalizado"></div>
             <h3>Asesoramiento profesional personalizado</h3>
             <p>Una mirada profesional para ayudarte a elegir lo que mejor acompaña tus facciones, tu colorimetría y el estilo que querés transmitir.</p>
           </article>
@@ -1484,6 +1573,18 @@
         <p class="section-subtitle reveal">
           Dos propuestas exclusivas pensadas para vivir la previa con calma, emoción y detalles que elevan el servicio a una experiencia mucho más especial.
         </p>
+
+        <div class="premium-intro glass reveal">
+          <div class="premium-intro-media">
+            <img src="https://iili.io/qm1QLEF.jpg" alt="Detalle de batas y pantuflas para la experiencia premium">
+          </div>
+          <div class="premium-intro-copy">
+            <h3>Una previa premium cuidada desde el primer detalle</h3>
+            <p>
+              Antes del servicio, la experiencia ya empieza a sentirse: batas, pantuflas y un entorno pensado para que la previa se viva con comodidad, calma y un toque especial.
+            </p>
+          </div>
+        </div>
 
         <div class="premium-grid">
           <article class="premium-card reveal">
@@ -1623,7 +1724,7 @@
         </div>
 
         <div class="gallery-actions hidden" id="galleryInstagramWrap">
-          <a class="btn btn-primary" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Ver en Instagram</a>
+          <a class="btn btn-primary" href="https://www.instagram.com/peluqueriaroxanabilbao/?hl=es/?hl=es?hl=es" target="_blank" rel="noopener noreferrer">Ver en Instagram</a>
         </div>
       </div>
     </section>
