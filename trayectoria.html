@@ -64,7 +64,7 @@
       background-color:var(--bg);
       background-image:
         linear-gradient(var(--overlay-light), var(--overlay-light)),
-        url("https://iili.io/qip0l3v.jpg");
+        url("https://iili.io/qmsAHTQ.jpg");
       background-size:cover;
       background-position:center top;
       background-repeat:no-repeat;
@@ -75,7 +75,7 @@
     body.dark{
       background-image:
         linear-gradient(var(--overlay-dark), var(--overlay-dark)),
-        url("https://iili.io/qip0l3v.jpg");
+        url("https://iili.io/qmsAHTQ.jpg");
     }
 
     img{ display:block; max-width:100%; }
@@ -260,7 +260,7 @@
       display:grid;
       grid-template-columns:1.1fr .9fr;
       gap:22px;
-      align-items:stretch;
+      align-items:start;
       margin-bottom:24px;
     }
 
@@ -333,14 +333,17 @@
       padding:10px;
       margin-bottom:18px;
       box-shadow:0 12px 30px rgba(83,58,50,.08);
+      aspect-ratio:4/5;
+      max-height:460px;
     }
 
     .hero-side-media img{
       width:100%;
+      height:100%;
       display:block;
       border-radius:16px;
       object-fit:cover;
-      object-position:center;
+      object-position:center top;
     }
 
     .hero-side h3,
@@ -526,6 +529,9 @@
       .hero-side,
       .content-box{
         border-radius:24px;
+      }
+      .hero-side-media{
+        max-height:none;
       }
     }
 
