@@ -325,6 +325,24 @@
       flex-wrap:wrap;
     }
 
+    .hero-side-media{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(200,165,106,.16);
+      background:rgba(255,255,255,.20);
+      padding:10px;
+      margin-bottom:18px;
+      box-shadow:0 12px 30px rgba(83,58,50,.08);
+    }
+
+    .hero-side-media img{
+      width:100%;
+      display:block;
+      border-radius:16px;
+      object-fit:cover;
+      object-position:center;
+    }
+
     .hero-side h3,
     .content-box h3,
     .gallery-head h3{
@@ -441,6 +459,11 @@
       object-fit:contain;
       object-position:center;
       border-radius:16px;
+    }
+
+    .trajectory-card img.rotate-fix{
+      transform:rotate(90deg) scale(.84);
+      transform-origin:center;
     }
 
     .trajectory-actions{
@@ -651,6 +674,9 @@
             </article>
 
             <aside class="hero-side">
+              <div class="hero-side-media">
+                <img src="https://iili.io/qmagEIj.jpg" alt="Roxana Bilbao sosteniendo una copa en su trayectoria profesional">
+              </div>
               <h3>Perfil profesional</h3>
               <p>
                 Esta trayectoria reúne parte del camino profesional de Roxana dentro del rubro: experiencia, competencias, formación y años de trabajo que hoy fortalecen su identidad como profesional.
@@ -815,7 +841,6 @@
       "https://iili.io/qZBSAue.png",
       "https://iili.io/qZBS1cB.png",
       "https://iili.io/qZBSE8P.png",
-      "https://iili.io/qZBSVAF.png",
       "https://iili.io/qZBSwMv.png",
       "https://iili.io/qZBSPVf.png",
       "https://iili.io/qZBSbR9.png",
@@ -839,11 +864,14 @@
       const start = page * perPage;
       const visible = images.slice(start, start + perPage);
 
-      grid.innerHTML = visible.map((src, i) => `
+      grid.innerHTML = visible.map((src, i) => {
+        const rotateClass = src === "https://iili.io/qZBSLKl.png" ? "rotate-fix" : "";
+        return `
         <article class="trajectory-card">
-          <img src="${src}" alt="Trayectoria ${start + i + 1}">
+          <img class="${rotateClass}" src="${src}" alt="Trayectoria ${start + i + 1}">
         </article>
-      `).join("");
+      `;
+      }).join("");
 
       prevBtn.style.opacity = page === 0 ? ".55" : "1";
       prevBtn.style.pointerEvents = page === 0 ? "none" : "auto";
