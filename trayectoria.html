@@ -477,13 +477,60 @@
       flex-wrap:wrap;
     }
 
+    .family-highlight{
+      margin-top:32px;
+      border-radius:28px;
+      padding:22px;
+      background:rgba(255,255,255,.22);
+      border:1px solid rgba(200,165,106,.16);
+      box-shadow:0 12px 30px rgba(83,58,50,.08);
+    }
+
+    .family-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .family-media{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(200,165,106,.16);
+      background:rgba(255,255,255,.20);
+      padding:10px;
+      box-shadow:0 12px 30px rgba(83,58,50,.08);
+      aspect-ratio:4/3;
+    }
+
+    .family-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      border-radius:16px;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .family-copy h3{
+      color:var(--text-strong);
+      font-size:1.35rem;
+      margin-bottom:12px;
+    }
+
+    .family-copy p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
     .footer-space{
       padding-bottom:24px;
     }
 
     @media (max-width: 1080px){
       .hero-top,
-      .content-grid{
+      .content-grid,
+      .family-grid{
         grid-template-columns:1fr;
       }
 
@@ -791,6 +838,26 @@
             <button class="btn btn-primary" id="nextBtn" type="button">Ver más trayectoria</button>
             <a class="btn btn-gold" href="index.html">Volver al inicio</a>
           </div>
+
+          <section class="family-highlight" aria-labelledby="familia-title">
+            <div class="family-grid">
+              <div class="family-media">
+                <img src="https://iili.io/qmykPeV.jpg" alt="Roxana Bilbao junto a su familia">
+              </div>
+              <div class="family-copy">
+                <h3 id="familia-title">La familia como parte de su historia</h3>
+                <p>
+                  Detrás de cada etapa profesional también hay una historia personal construida con afecto, acompañamiento y vínculos que forman parte de su camino.
+                </p>
+                <p>
+                  Esta imagen refleja ese costado más cercano de Roxana Bilbao, donde la familia también ocupa un lugar importante dentro de su recorrido, acompañando años de esfuerzo, crecimiento y dedicación.
+                </p>
+                <p>
+                  Su trayectoria no solo habla de experiencia y profesión, sino también de una vida construida con compromiso, valores y personas importantes a su alrededor.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -856,7 +923,8 @@
       "https://iili.io/qZBUxWJ.png",
       "https://iili.io/qZBUulp.png",
       "https://iili.io/qZBUTfR.png",
-      "https://iili.io/qZBUlxs.png"
+      "https://iili.io/qZBUlxs.png",
+      "https://iili.io/qmyMwnR.jpg"
     ];
 
     const grid = document.getElementById("trajectoryGrid");
